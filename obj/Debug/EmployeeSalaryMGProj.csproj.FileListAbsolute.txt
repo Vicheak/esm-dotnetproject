@@ -1,0 +1,11 @@
+D:\Target document\C# programming\Revision\EmployeeSalaryMGProj\bin\Debug\EmployeeSalaryMGProj.exe.config
+D:\Target document\C# programming\Revision\EmployeeSalaryMGProj\bin\Debug\EmployeeSalaryMGProj.exe
+D:\Target document\C# programming\Revision\EmployeeSalaryMGProj\bin\Debug\EmployeeSalaryMGProj.pdb
+D:\Target document\C# programming\Revision\EmployeeSalaryMGProj\obj\Debug\EmployeeSalaryMGProj.csproj.AssemblyReference.cache
+D:\Target document\C# programming\Revision\EmployeeSalaryMGProj\obj\Debug\EmployeeSalaryMGProj.csproj.SuggestedBindingRedirects.cache
+D:\Target document\C# programming\Revision\EmployeeSalaryMGProj\obj\Debug\EmployeeSalaryMGProj.FrmDepartment.resources
+D:\Target document\C# programming\Revision\EmployeeSalaryMGProj\obj\Debug\EmployeeSalaryMGProj.Properties.Resources.resources
+D:\Target document\C# programming\Revision\EmployeeSalaryMGProj\obj\Debug\EmployeeSalaryMGProj.csproj.GenerateResource.cache
+D:\Target document\C# programming\Revision\EmployeeSalaryMGProj\obj\Debug\EmployeeSalaryMGProj.csproj.CoreCompileInputs.cache
+D:\Target document\C# programming\Revision\EmployeeSalaryMGProj\obj\Debug\EmployeeSalaryMGProj.exe
+D:\Target document\C# programming\Revision\EmployeeSalaryMGProj\obj\Debug\EmployeeSalaryMGProj.pdb
