@@ -9,3 +9,6 @@ D:\Target document\C# programming\Revision\EmployeeSalaryMGProj\obj\Debug\Employ
 D:\Target document\C# programming\Revision\EmployeeSalaryMGProj\obj\Debug\EmployeeSalaryMGProj.csproj.CoreCompileInputs.cache
 D:\Target document\C# programming\Revision\EmployeeSalaryMGProj\obj\Debug\EmployeeSalaryMGProj.exe
 D:\Target document\C# programming\Revision\EmployeeSalaryMGProj\obj\Debug\EmployeeSalaryMGProj.pdb
+D:\Target document\C# programming\Revision\EmployeeSalaryMGProj\obj\Debug\EmployeeSalaryMGProj.FrmEmployee.resources
+D:\Target document\C# programming\Revision\EmployeeSalaryMGProj\obj\Debug\EmployeeSalaryMGProj.FrmAddOrModifyEmployee.resources
+D:\Target document\C# programming\Revision\EmployeeSalaryMGProj\obj\Debug\EmployeeSalaryMGProj.FrmUpdateBaseSalary.resources

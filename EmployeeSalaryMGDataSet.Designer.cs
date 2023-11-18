@@ -5798,12 +5798,21 @@ SELECT EmployeeId, FirstName, LastName, Gender, BirthDate, BaseSalary, Departmen
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT EmployeeId, FirstName, LastName, Gender, BirthDate, BaseSalary, Department" +
                 "Id, Active FROM dbo.Employees";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = @"SELECT EmployeeId, FirstName, LastName, Gender, BirthDate, BaseSalary, DepartmentId, Active
+FROM     Employees
+WHERE  (CAST(EmployeeId AS VARCHAR(50)) = @Search) OR
+                  (FirstName LIKE @Search + '%') OR
+                  (LastName LIKE @Search + '%')";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Search", global::System.Data.SqlDbType.VarChar, 1024, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5828,6 +5837,25 @@ SELECT EmployeeId, FirstName, LastName, Gender, BirthDate, BaseSalary, Departmen
             EmployeeSalaryMGDataSet.EmployeesDataTable dataTable = new EmployeeSalaryMGDataSet.EmployeesDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int SearchEmployees(EmployeeSalaryMGDataSet.EmployeesDataTable dataTable, string Search) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((Search == null)) {
+                throw new global::System.ArgumentNullException("Search");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(Search));
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]

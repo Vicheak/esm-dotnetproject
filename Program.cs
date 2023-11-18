@@ -16,7 +16,7 @@ namespace EmployeeSalaryMGProj
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmDepartment());
+            Application.Run(new FrmEmployee());
         }
     }
 }
