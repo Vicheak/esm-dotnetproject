@@ -51,43 +51,49 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>EmployeeSalaryMGDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="FrmAddOrModifyEmployee.cs">
+    <Compile Include="Employees\FrmAddOrModifyEmployee.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmAddOrModifyEmployee.Designer.cs">
+    <Compile Include="Employees\FrmAddOrModifyEmployee.Designer.cs">
       <DependentUpon>FrmAddOrModifyEmployee.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmDepartment.cs">
+    <Compile Include="Employees\FrmDepartment.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmDepartment.Designer.cs">
+    <Compile Include="Employees\FrmDepartment.Designer.cs">
       <DependentUpon>FrmDepartment.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmEmployee.cs">
+    <Compile Include="Employees\FrmEmployee.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmEmployee.Designer.cs">
+    <Compile Include="Employees\FrmEmployee.Designer.cs">
       <DependentUpon>FrmEmployee.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmUpdateBaseSalary.cs">
+    <Compile Include="Employees\FrmUpdateBaseSalary.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmUpdateBaseSalary.Designer.cs">
+    <Compile Include="Employees\FrmUpdateBaseSalary.Designer.cs">
       <DependentUpon>FrmUpdateBaseSalary.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SalaryPayments\FrmGrossSalary.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SalaryPayments\FrmGrossSalary.Designer.cs">
+      <DependentUpon>FrmGrossSalary.cs</DependentUpon>
+    </Compile>
     <Compile Include="Utility\CheckUtil.cs" />
-    <EmbeddedResource Include="FrmAddOrModifyEmployee.resx">
+    <EmbeddedResource Include="Employees\FrmAddOrModifyEmployee.resx">
       <DependentUpon>FrmAddOrModifyEmployee.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmDepartment.resx">
+    <EmbeddedResource Include="Employees\FrmDepartment.resx">
       <DependentUpon>FrmDepartment.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmEmployee.resx">
+    <EmbeddedResource Include="Employees\FrmEmployee.resx">
       <DependentUpon>FrmEmployee.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmUpdateBaseSalary.resx">
+    <EmbeddedResource Include="Employees\FrmUpdateBaseSalary.resx">
       <DependentUpon>FrmUpdateBaseSalary.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -100,6 +106,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="SalaryPayments\FrmGrossSalary.resx">
+      <DependentUpon>FrmGrossSalary.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="EmployeeSalaryMGDataSet.xsc">
       <DependentUpon>EmployeeSalaryMGDataSet.xsd</DependentUpon>
     </None>
