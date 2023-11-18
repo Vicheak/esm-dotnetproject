@@ -42,6 +42,7 @@
             this.employeesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.employeesTableAdapter = new EmployeeSalaryMGProj.EmployeeSalaryMGDataSetTableAdapters.EmployeesTableAdapter();
             this.tableAdapterManager = new EmployeeSalaryMGProj.EmployeeSalaryMGDataSetTableAdapters.TableAdapterManager();
+            this.baseSalaryLogsTableAdapter = new EmployeeSalaryMGProj.EmployeeSalaryMGDataSetTableAdapters.BaseSalaryLogsTableAdapter();
             this.departmentsTableAdapter = new EmployeeSalaryMGProj.EmployeeSalaryMGDataSetTableAdapters.DepartmentsTableAdapter();
             this.employeeIdTextBox = new System.Windows.Forms.TextBox();
             this.firstNameTextBox = new System.Windows.Forms.TextBox();
@@ -56,7 +57,6 @@
             this.btnSave = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnUpdateBaseSalary = new System.Windows.Forms.Button();
-            this.baseSalaryLogsTableAdapter = new EmployeeSalaryMGProj.EmployeeSalaryMGDataSetTableAdapters.BaseSalaryLogsTableAdapter();
             employeeIdLabel = new System.Windows.Forms.Label();
             firstNameLabel = new System.Windows.Forms.Label();
             lastNameLabel = new System.Windows.Forms.Label();
@@ -171,6 +171,10 @@
             this.tableAdapterManager.UpdateOrder = EmployeeSalaryMGProj.EmployeeSalaryMGDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             this.tableAdapterManager.UsersTableAdapter = null;
             // 
+            // baseSalaryLogsTableAdapter
+            // 
+            this.baseSalaryLogsTableAdapter.ClearBeforeFill = true;
+            // 
             // departmentsTableAdapter
             // 
             this.departmentsTableAdapter.ClearBeforeFill = true;
@@ -238,7 +242,6 @@
             // 
             // departmentIdComboBox
             // 
-            this.departmentIdComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.employeesBindingSource, "DepartmentId", true));
             this.departmentIdComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.employeesBindingSource, "DepartmentId", true));
             this.departmentIdComboBox.DataSource = this.departmentsBindingSource;
             this.departmentIdComboBox.DisplayMember = "Name";
@@ -320,10 +323,6 @@
             this.btnUpdateBaseSalary.Text = "...";
             this.btnUpdateBaseSalary.UseVisualStyleBackColor = false;
             this.btnUpdateBaseSalary.Click += new System.EventHandler(this.btnUpdateBaseSalary_Click);
-            // 
-            // baseSalaryLogsTableAdapter
-            // 
-            this.baseSalaryLogsTableAdapter.ClearBeforeFill = true;
             // 
             // FrmAddOrModifyEmployee
             // 
