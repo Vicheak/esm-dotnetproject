@@ -16,7 +16,7 @@ namespace EmployeeSalaryMGProj
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new SalaryPayments.FrmGrossSalary());
+            Application.Run(new SalaryPayments.FrmChooseEmployeeToGetSlip());
         }
     }
 }
