@@ -13,3 +13,6 @@ D:\Target document\C# programming\Revision\EmployeeSalaryMGProj\obj\Debug\Employ
 D:\Target document\C# programming\Revision\EmployeeSalaryMGProj\obj\Debug\EmployeeSalaryMGProj.FrmAddOrModifyEmployee.resources
 D:\Target document\C# programming\Revision\EmployeeSalaryMGProj\obj\Debug\EmployeeSalaryMGProj.FrmUpdateBaseSalary.resources
 D:\Target document\C# programming\Revision\EmployeeSalaryMGProj\obj\Debug\EmployeeSalaryMGProj.SalaryPayments.FrmGrossSalary.resources
+D:\Target document\C# programming\Revision\EmployeeSalaryMGProj\obj\Debug\EmployeeSalaryMGProj.SalaryPayments.FrmChooseEmployeeToGetSlip.resources
+D:\Target document\C# programming\Revision\EmployeeSalaryMGProj\obj\Debug\EmployeeSalaryMGProj.SalaryPayments.FrmGenerateSlip.resources
+D:\Target document\C# programming\Revision\EmployeeSalaryMGProj\obj\Debug\EmployeeSalaryMGProj.SalaryPayments.UserControlSalaryGross.resources
