@@ -33,6 +33,9 @@
             System.Windows.Forms.Label firstNameLabel;
             System.Windows.Forms.Label baseSalaryLabel;
             System.Windows.Forms.Label departmentIdLabel;
+            System.Windows.Forms.Label label1;
+            System.Windows.Forms.Label label2;
+            System.Windows.Forms.Label label3;
             this.employeeSalaryMGDataSet = new EmployeeSalaryMGProj.EmployeeSalaryMGDataSet();
             this.employeesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.employeesTableAdapter = new EmployeeSalaryMGProj.EmployeeSalaryMGDataSetTableAdapters.EmployeesTableAdapter();
@@ -53,16 +56,29 @@
             this.vSalaryDeductionBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.vSalaryBenefitTableAdapter = new EmployeeSalaryMGProj.EmployeeSalaryMGDataSetTableAdapters.VSalaryBenefitTableAdapter();
             this.vSalaryDeductionTableAdapter = new EmployeeSalaryMGProj.EmployeeSalaryMGDataSetTableAdapters.VSalaryDeductionTableAdapter();
+            this.btnSubmit = new System.Windows.Forms.Button();
+            this.btnCancel = new System.Windows.Forms.Button();
+            this.dateTimePickerGeneratedSlip = new System.Windows.Forms.DateTimePicker();
+            this.cbMonth = new System.Windows.Forms.ComboBox();
+            this.cbYear = new System.Windows.Forms.ComboBox();
+            this.monthsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.monthsTableAdapter = new EmployeeSalaryMGProj.EmployeeSalaryMGDataSetTableAdapters.MonthsTableAdapter();
+            this.salaryPaymentsTableAdapter = new EmployeeSalaryMGProj.EmployeeSalaryMGDataSetTableAdapters.SalaryPaymentsTableAdapter();
+            this.salaryPaymentGrossTableAdapter = new EmployeeSalaryMGProj.EmployeeSalaryMGDataSetTableAdapters.SalaryPaymentGrossTableAdapter();
             employeeIdLabel = new System.Windows.Forms.Label();
             firstNameLabel = new System.Windows.Forms.Label();
             baseSalaryLabel = new System.Windows.Forms.Label();
             departmentIdLabel = new System.Windows.Forms.Label();
+            label1 = new System.Windows.Forms.Label();
+            label2 = new System.Windows.Forms.Label();
+            label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.employeeSalaryMGDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.employeesBindingSource)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.vSalaryBenefitBindingSource)).BeginInit();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.vSalaryDeductionBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.monthsBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // employeeIdLabel
@@ -101,6 +117,33 @@
             departmentIdLabel.TabIndex = 13;
             departmentIdLabel.Text = "ដេប៉ាតឺម៉ង់៖";
             // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new System.Drawing.Point(15, 188);
+            label1.Name = "label1";
+            label1.Size = new System.Drawing.Size(180, 31);
+            label1.TabIndex = 11;
+            label1.Text = "កាលបរិច្ឆេទបង្កើតប័ណ្ណ៖";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new System.Drawing.Point(454, 188);
+            label2.Name = "label2";
+            label2.Size = new System.Drawing.Size(104, 31);
+            label2.TabIndex = 13;
+            label2.Text = "បង្កើតនៅខែ៖";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new System.Drawing.Point(696, 186);
+            label3.Name = "label3";
+            label3.Size = new System.Drawing.Size(104, 31);
+            label3.TabIndex = 13;
+            label3.Text = "បង្កើតនៅឆ្នាំ៖";
+            // 
             // employeeSalaryMGDataSet
             // 
             this.employeeSalaryMGDataSet.DataSetName = "EmployeeSalaryMGDataSet";
@@ -123,10 +166,11 @@
             this.tableAdapterManager.EmployeesTableAdapter = this.employeesTableAdapter;
             this.tableAdapterManager.GrossSalariesTableAdapter = null;
             this.tableAdapterManager.GrossTypesTableAdapter = null;
+            this.tableAdapterManager.MonthsTableAdapter = null;
             this.tableAdapterManager.PaymentStatesTableAdapter = null;
             this.tableAdapterManager.RolesTableAdapter = null;
-            this.tableAdapterManager.SalaryPaymentGrossTableAdapter = null;
-            this.tableAdapterManager.SalaryPaymentsTableAdapter = null;
+            this.tableAdapterManager.SalaryPaymentGrossTableAdapter = this.salaryPaymentGrossTableAdapter;
+            this.tableAdapterManager.SalaryPaymentsTableAdapter = this.salaryPaymentsTableAdapter;
             this.tableAdapterManager.UpdateOrder = EmployeeSalaryMGProj.EmployeeSalaryMGDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             this.tableAdapterManager.UsersTableAdapter = null;
             // 
@@ -178,7 +222,7 @@
             this.groupBox1.Controls.Add(this.benefitflowLayoutPanel);
             this.groupBox1.Controls.Add(this.btnAddBenefit);
             this.groupBox1.Controls.Add(this.cbChooseBenefit);
-            this.groupBox1.Location = new System.Drawing.Point(12, 210);
+            this.groupBox1.Location = new System.Drawing.Point(12, 257);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(455, 431);
             this.groupBox1.TabIndex = 14;
@@ -231,7 +275,7 @@
             this.groupBox2.Controls.Add(this.deductionflowLayoutPanel);
             this.groupBox2.Controls.Add(this.btnAddDeduction);
             this.groupBox2.Controls.Add(this.cbChooseDeduction);
-            this.groupBox2.Location = new System.Drawing.Point(481, 210);
+            this.groupBox2.Location = new System.Drawing.Point(481, 257);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(455, 431);
             this.groupBox2.TabIndex = 15;
@@ -287,10 +331,113 @@
             // 
             this.vSalaryDeductionTableAdapter.ClearBeforeFill = true;
             // 
+            // btnSubmit
+            // 
+            this.btnSubmit.BackColor = System.Drawing.Color.Navy;
+            this.btnSubmit.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSubmit.FlatAppearance.BorderSize = 0;
+            this.btnSubmit.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnSubmit.ForeColor = System.Drawing.Color.White;
+            this.btnSubmit.Location = new System.Drawing.Point(805, 694);
+            this.btnSubmit.Name = "btnSubmit";
+            this.btnSubmit.Size = new System.Drawing.Size(125, 39);
+            this.btnSubmit.TabIndex = 17;
+            this.btnSubmit.TabStop = false;
+            this.btnSubmit.Text = "បង្កើតប័ណ្ណ";
+            this.btnSubmit.UseVisualStyleBackColor = false;
+            this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.BackColor = System.Drawing.Color.Navy;
+            this.btnCancel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCancel.FlatAppearance.BorderSize = 0;
+            this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnCancel.ForeColor = System.Drawing.Color.White;
+            this.btnCancel.Location = new System.Drawing.Point(671, 694);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(125, 39);
+            this.btnCancel.TabIndex = 18;
+            this.btnCancel.TabStop = false;
+            this.btnCancel.Text = "ត្រឡប់";
+            this.btnCancel.UseVisualStyleBackColor = false;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
+            // dateTimePickerGeneratedSlip
+            // 
+            this.dateTimePickerGeneratedSlip.CustomFormat = "dd-MM-yyyy";
+            this.dateTimePickerGeneratedSlip.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimePickerGeneratedSlip.Location = new System.Drawing.Point(201, 182);
+            this.dateTimePickerGeneratedSlip.Name = "dateTimePickerGeneratedSlip";
+            this.dateTimePickerGeneratedSlip.Size = new System.Drawing.Size(240, 39);
+            this.dateTimePickerGeneratedSlip.TabIndex = 19;
+            // 
+            // cbMonth
+            // 
+            this.cbMonth.DataSource = this.monthsBindingSource;
+            this.cbMonth.DisplayMember = "Name";
+            this.cbMonth.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbMonth.FormattingEnabled = true;
+            this.cbMonth.Location = new System.Drawing.Point(564, 182);
+            this.cbMonth.Name = "cbMonth";
+            this.cbMonth.Size = new System.Drawing.Size(121, 39);
+            this.cbMonth.TabIndex = 20;
+            this.cbMonth.ValueMember = "MonthId";
+            // 
+            // cbYear
+            // 
+            this.cbYear.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbYear.FormattingEnabled = true;
+            this.cbYear.Items.AddRange(new object[] {
+            "2023",
+            "2024",
+            "2025",
+            "2026",
+            "2027",
+            "2028",
+            "2029",
+            "2030",
+            "2031",
+            "2032",
+            "2033",
+            "2034",
+            "2035",
+            "2036",
+            "2037",
+            "2038",
+            "2039",
+            "2040"});
+            this.cbYear.Location = new System.Drawing.Point(805, 182);
+            this.cbYear.Name = "cbYear";
+            this.cbYear.Size = new System.Drawing.Size(121, 39);
+            this.cbYear.TabIndex = 20;
+            // 
+            // monthsBindingSource
+            // 
+            this.monthsBindingSource.DataMember = "Months";
+            this.monthsBindingSource.DataSource = this.employeeSalaryMGDataSet;
+            // 
+            // monthsTableAdapter
+            // 
+            this.monthsTableAdapter.ClearBeforeFill = true;
+            // 
+            // salaryPaymentsTableAdapter
+            // 
+            this.salaryPaymentsTableAdapter.ClearBeforeFill = true;
+            // 
+            // salaryPaymentGrossTableAdapter
+            // 
+            this.salaryPaymentGrossTableAdapter.ClearBeforeFill = true;
+            // 
             // FrmGenerateSlip
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(948, 653);
+            this.ClientSize = new System.Drawing.Size(948, 741);
+            this.Controls.Add(this.cbYear);
+            this.Controls.Add(this.cbMonth);
+            this.Controls.Add(this.dateTimePickerGeneratedSlip);
+            this.Controls.Add(this.btnCancel);
+            this.Controls.Add(this.btnSubmit);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(employeeIdLabel);
@@ -298,8 +445,11 @@
             this.Controls.Add(firstNameLabel);
             this.Controls.Add(this.txtEmployeeName);
             this.Controls.Add(this.txtDepartment);
+            this.Controls.Add(label1);
             this.Controls.Add(baseSalaryLabel);
+            this.Controls.Add(label3);
             this.Controls.Add(this.baseSalaryTextBox);
+            this.Controls.Add(label2);
             this.Controls.Add(departmentIdLabel);
             this.Font = new System.Drawing.Font("Khmer OS Siemreap", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -315,6 +465,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.vSalaryBenefitBindingSource)).EndInit();
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.vSalaryDeductionBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.monthsBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -342,5 +493,14 @@
         private EmployeeSalaryMGDataSetTableAdapters.VSalaryBenefitTableAdapter vSalaryBenefitTableAdapter;
         private System.Windows.Forms.BindingSource vSalaryDeductionBindingSource;
         private EmployeeSalaryMGDataSetTableAdapters.VSalaryDeductionTableAdapter vSalaryDeductionTableAdapter;
+        private System.Windows.Forms.Button btnSubmit;
+        private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.DateTimePicker dateTimePickerGeneratedSlip;
+        private System.Windows.Forms.ComboBox cbMonth;
+        private System.Windows.Forms.ComboBox cbYear;
+        private System.Windows.Forms.BindingSource monthsBindingSource;
+        private EmployeeSalaryMGDataSetTableAdapters.MonthsTableAdapter monthsTableAdapter;
+        private EmployeeSalaryMGDataSetTableAdapters.SalaryPaymentsTableAdapter salaryPaymentsTableAdapter;
+        private EmployeeSalaryMGDataSetTableAdapters.SalaryPaymentGrossTableAdapter salaryPaymentGrossTableAdapter;
     }
 }

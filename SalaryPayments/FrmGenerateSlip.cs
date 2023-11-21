@@ -19,7 +19,10 @@ namespace EmployeeSalaryMGProj.SalaryPayments
             new EmployeeSalaryMGDataSet.GrossSalariesDataTable();
 
         public EmployeeSalaryMGDataSet.GrossSalariesDataTable tempDeductionGrossSalaryDataTable =
-            new EmployeeSalaryMGDataSet.GrossSalariesDataTable(); 
+            new EmployeeSalaryMGDataSet.GrossSalariesDataTable();
+
+        //create salary payment row for filter in form choose employee to get slip 
+        public EmployeeSalaryMGDataSet.SalaryPaymentsRow salaryPaymentRow; 
 
         public FrmGenerateSlip()
         {
@@ -28,6 +31,8 @@ namespace EmployeeSalaryMGProj.SalaryPayments
 
         private void FrmGenerateSlip_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'employeeSalaryMGDataSet.Months' table. You can move, or remove it, as needed.
+            this.monthsTableAdapter.Fill(this.employeeSalaryMGDataSet.Months);
             if (employeesRow == null)
             {
                 MessageBox.Show("Employee is empty!", "Error",
@@ -51,6 +56,13 @@ namespace EmployeeSalaryMGProj.SalaryPayments
             this.vSalaryDeductionTableAdapter.Fill(this.employeeSalaryMGDataSet.VSalaryDeduction);
 
             this.vSalaryBenefitTableAdapter.Fill(this.employeeSalaryMGDataSet.VSalaryBenefit);
+
+            //set default value for combo box (month and year)
+            var now = DateTime.Now;
+            var lastMonthDate = now.AddMonths(-1);
+
+            cbMonth.SelectedValue = lastMonthDate.Month;
+            cbYear.Text = lastMonthDate.Year.ToString(); 
         }
 
         private void btnAddBenefit_Click(object sender, EventArgs e)
@@ -156,6 +168,67 @@ namespace EmployeeSalaryMGProj.SalaryPayments
 
             //remove user control from flow layout panel
             deductionflowLayoutPanel.Controls.Remove(userControl);
+        }
+
+        private void btnSubmit_Click(object sender, EventArgs e)
+        {
+            //create new row for salary payment and assign value to required fields
+            salaryPaymentRow = this.employeeSalaryMGDataSet.SalaryPayments.NewSalaryPaymentsRow();
+            salaryPaymentRow.ItemArray = new object[]
+            {
+                -1, 
+               dateTimePickerGeneratedSlip.Value, 
+               employeesRow.BaseSalary,
+               (int)cbMonth.SelectedValue,
+               Convert.ToInt32(cbYear.Text),
+               1, //Unpaid
+               DBNull.Value,
+               employeesRow.EmployeeId
+            };
+
+            //add one salary payment row to data set
+            this.employeeSalaryMGDataSet.SalaryPayments.AddSalaryPaymentsRow(salaryPaymentRow);
+
+            //update salary payment row into the database
+            this.salaryPaymentsTableAdapter.Update(salaryPaymentRow); 
+
+            //loop via temporary data table
+            foreach(var benefit in tempBenefitGrossSalaryDataTable)
+            {
+                var salaryPaymentGrossRow = this.employeeSalaryMGDataSet.SalaryPaymentGross.NewSalaryPaymentGrossRow();
+                salaryPaymentGrossRow.ItemArray = new object[]
+                {
+                    salaryPaymentRow.SalaryPaymentId,
+                    benefit.GrossSalaryId, 
+                    benefit.Amount
+                };
+
+                this.employeeSalaryMGDataSet.SalaryPaymentGross.AddSalaryPaymentGrossRow(salaryPaymentGrossRow); 
+            }
+
+            foreach (var deduction in tempDeductionGrossSalaryDataTable)
+            {
+                var salaryPaymentGrossRow = this.employeeSalaryMGDataSet.SalaryPaymentGross.NewSalaryPaymentGrossRow();
+                salaryPaymentGrossRow.ItemArray = new object[]
+                {
+                    salaryPaymentRow.SalaryPaymentId,
+                    deduction.GrossSalaryId,
+                    deduction.Amount
+                };
+
+                this.employeeSalaryMGDataSet.SalaryPaymentGross.AddSalaryPaymentGrossRow(salaryPaymentGrossRow);
+            }
+
+            //update all salary payment gross rows into the database 
+            this.salaryPaymentGrossTableAdapter.Update(this.employeeSalaryMGDataSet.SalaryPaymentGross); 
+
+            //close the form itself
+            this.DialogResult = DialogResult.OK;
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            this.Close(); 
         }
     }
 }
