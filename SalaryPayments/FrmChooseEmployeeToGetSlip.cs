@@ -18,8 +18,11 @@ namespace EmployeeSalaryMGProj.SalaryPayments
         }
 
         private void FrmChooseEmployeeToGetSlip_Load(object sender, EventArgs e)
-        {
-            FillDepartment(); 
+        { 
+            FillDepartment();
+
+            //load all row from view salary payment detail
+            this.vSalaryPaymentDetailTableAdapter.Fill(this.employeeSalaryMGDataSet.VSalaryPaymentDetail);
         }
 
         private void FillDepartment()
@@ -78,6 +81,16 @@ namespace EmployeeSalaryMGProj.SalaryPayments
             frmGenerateSlip.employeesRow = GetCurrentEmployee();
             
             frmGenerateSlip.ShowDialog();
+
+            //merge data row from form generate slip 
+            if(frmGenerateSlip.DialogResult == DialogResult.OK)
+            {
+                var salaryPaymentDataTableToMerge = 
+                    this.vSalaryPaymentDetailTableAdapter.GetDataBySalaryPaymentId(frmGenerateSlip.salaryPaymentRow.SalaryPaymentId);
+
+                //merge from database into data set
+                this.employeeSalaryMGDataSet.VSalaryPaymentDetail.Merge(salaryPaymentDataTableToMerge); 
+            }
         }
 
         private EmployeeSalaryMGDataSet.EmployeesRow GetCurrentEmployee()
