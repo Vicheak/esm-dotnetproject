@@ -106,5 +106,96 @@ namespace EmployeeSalaryMGProj.SalaryPayments
                 return null; 
             }
         }
+
+        private void btnSetPaymentStatus_Click(object sender, EventArgs e)
+        {
+            //set payment status
+            var salaryPaymentDetailRow = GetCurrentVSalaryPaymentDetailRow(); 
+
+            if (salaryPaymentDetailRow == null)
+            {
+                MessageBox.Show("Salary payment detail is empty!", "Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return; 
+            }
+
+            string message = $"Are you sure to pay for employee {salaryPaymentDetailRow.EmployeeName}?";
+
+            var resultDialog = MessageBox.Show(message, "Confirmation",
+                MessageBoxButtons.OKCancel, MessageBoxIcon.Question); 
+
+            if(resultDialog == DialogResult.OK)
+            {
+                //filter for data table
+                var salaryPaymentsDataTableTemp = 
+                    this.salaryPaymentsTableAdapter.GetDataBySalaryPaymentId(salaryPaymentDetailRow.SalaryPaymentId);
+
+                //access the first row of data table 
+                var salaryPaymentRow = salaryPaymentsDataTableTemp[0];
+
+                //update salary payment row
+                salaryPaymentRow.PaymentStateId = 2; //Paid
+                salaryPaymentRow.PaymentDate = DateTime.Now;
+
+                //update view object row
+                salaryPaymentDetailRow.Status = "Paid";
+                salaryPaymentDetailRow.PaymentDate = salaryPaymentRow.PaymentDate; 
+
+                //update into the database
+                this.salaryPaymentsTableAdapter.Update(salaryPaymentRow);
+            }
+        }
+
+        private void btnCancelPaymentStatus_Click(object sender, EventArgs e)
+        {
+            //set payment 
+            var salaryPaymentDetailRow = GetCurrentVSalaryPaymentDetailRow();
+
+            if (salaryPaymentDetailRow == null)
+            {
+                MessageBox.Show("Salary payment detail is empty!", "Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            string message = $"Are you sure to cancel payment for employee {salaryPaymentDetailRow.EmployeeName}?";
+
+            var resultDialog = MessageBox.Show(message, "Confirmation",
+                MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+
+            if (resultDialog == DialogResult.OK)
+            {
+                //filter for data table
+                var salaryPaymentsDataTableTemp =
+                    this.salaryPaymentsTableAdapter.GetDataBySalaryPaymentId(salaryPaymentDetailRow.SalaryPaymentId);
+
+                //access the first row of data table 
+                var salaryPaymentRow = salaryPaymentsDataTableTemp[0];
+
+                //update salary payment row
+                salaryPaymentRow.PaymentStateId = 1; //Unpaid
+
+                //update view object row
+                salaryPaymentDetailRow.Status = "Unpaid";
+
+                //update into the database
+                this.salaryPaymentsTableAdapter.Update(salaryPaymentRow);
+            }
+        }
+        
+        private EmployeeSalaryMGDataSet.VSalaryPaymentDetailRow GetCurrentVSalaryPaymentDetailRow()
+        {
+            //access current data row from employee binding source
+            try
+            { 
+                var currentSalaryPaymentDetailRow = this.vSalaryPaymentDetailBindingSource.Current as DataRowView;
+                if (currentSalaryPaymentDetailRow == null) return null; 
+                return currentSalaryPaymentDetailRow.Row as EmployeeSalaryMGDataSet.VSalaryPaymentDetailRow;
+            }
+            catch (NullReferenceException ex)
+            {
+                return null;
+            }
+        }
     }
 }
