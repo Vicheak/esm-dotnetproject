@@ -28,15 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmHome));
             this.label1 = new System.Windows.Forms.Label();
             this.mainFlowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
-            this.btnShowFrmAddNewEmployee = new System.Windows.Forms.Button();
             this.btnShowFrmEmployee = new System.Windows.Forms.Button();
+            this.btnShowFrmAddNewEmployee = new System.Windows.Forms.Button();
             this.btnShowFrmSalaryPayment = new System.Windows.Forms.Button();
             this.btnShowFrmDepartment = new System.Windows.Forms.Button();
             this.btnShowFrmGrossSalary = new System.Windows.Forms.Button();
-            this.mainPanel = new System.Windows.Forms.Panel();
+            this.btnShowFrmUser = new System.Windows.Forms.Button();
             this.btnCloseApp = new System.Windows.Forms.Button();
+            this.mainPanel = new System.Windows.Forms.Panel();
             this.mainFlowLayoutPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -46,8 +48,11 @@
             this.label1.Dock = System.Windows.Forms.DockStyle.Top;
             this.label1.Font = new System.Drawing.Font("Khmer M1", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Image = global::EmployeeSalaryMGProj.Properties.Resources.home_24px_Gray;
+            this.label1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
+            this.label1.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
             this.label1.Size = new System.Drawing.Size(1282, 60);
             this.label1.TabIndex = 9;
             this.label1.Text = "ប្រព័ន្ធគ្រប់គ្រងព័ត៌មានបុគ្គលិក";
@@ -61,31 +66,15 @@
             this.mainFlowLayoutPanel.Controls.Add(this.btnShowFrmSalaryPayment);
             this.mainFlowLayoutPanel.Controls.Add(this.btnShowFrmDepartment);
             this.mainFlowLayoutPanel.Controls.Add(this.btnShowFrmGrossSalary);
+            this.mainFlowLayoutPanel.Controls.Add(this.btnShowFrmUser);
             this.mainFlowLayoutPanel.Controls.Add(this.btnCloseApp);
             this.mainFlowLayoutPanel.Dock = System.Windows.Forms.DockStyle.Left;
             this.mainFlowLayoutPanel.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.mainFlowLayoutPanel.Location = new System.Drawing.Point(0, 60);
             this.mainFlowLayoutPanel.Name = "mainFlowLayoutPanel";
-            this.mainFlowLayoutPanel.Size = new System.Drawing.Size(235, 693);
+            this.mainFlowLayoutPanel.Size = new System.Drawing.Size(271, 693);
             this.mainFlowLayoutPanel.TabIndex = 10;
             this.mainFlowLayoutPanel.WrapContents = false;
-            // 
-            // btnShowFrmAddNewEmployee
-            // 
-            this.btnShowFrmAddNewEmployee.BackColor = System.Drawing.Color.Red;
-            this.btnShowFrmAddNewEmployee.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnShowFrmAddNewEmployee.FlatAppearance.BorderSize = 0;
-            this.btnShowFrmAddNewEmployee.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnShowFrmAddNewEmployee.Font = new System.Drawing.Font("Khmer M1", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnShowFrmAddNewEmployee.ForeColor = System.Drawing.Color.White;
-            this.btnShowFrmAddNewEmployee.Location = new System.Drawing.Point(3, 66);
-            this.btnShowFrmAddNewEmployee.Name = "btnShowFrmAddNewEmployee";
-            this.btnShowFrmAddNewEmployee.Size = new System.Drawing.Size(228, 57);
-            this.btnShowFrmAddNewEmployee.TabIndex = 0;
-            this.btnShowFrmAddNewEmployee.TabStop = false;
-            this.btnShowFrmAddNewEmployee.Text = "បង្កើតបុគ្គលិកថ្មី";
-            this.btnShowFrmAddNewEmployee.UseVisualStyleBackColor = false;
-            this.btnShowFrmAddNewEmployee.Click += new System.EventHandler(this.btnShowFrmAddNewEmployee_Click);
             // 
             // btnShowFrmEmployee
             // 
@@ -95,14 +84,37 @@
             this.btnShowFrmEmployee.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnShowFrmEmployee.Font = new System.Drawing.Font("Khmer M1", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnShowFrmEmployee.ForeColor = System.Drawing.Color.White;
+            this.btnShowFrmEmployee.Image = ((System.Drawing.Image)(resources.GetObject("btnShowFrmEmployee.Image")));
+            this.btnShowFrmEmployee.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnShowFrmEmployee.Location = new System.Drawing.Point(3, 3);
             this.btnShowFrmEmployee.Name = "btnShowFrmEmployee";
-            this.btnShowFrmEmployee.Size = new System.Drawing.Size(228, 57);
+            this.btnShowFrmEmployee.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnShowFrmEmployee.Size = new System.Drawing.Size(260, 57);
             this.btnShowFrmEmployee.TabIndex = 1;
             this.btnShowFrmEmployee.TabStop = false;
             this.btnShowFrmEmployee.Text = "ព័ត៌មានបុគ្គលិក";
             this.btnShowFrmEmployee.UseVisualStyleBackColor = false;
             this.btnShowFrmEmployee.Click += new System.EventHandler(this.btnShowFrmEmployee_Click);
+            // 
+            // btnShowFrmAddNewEmployee
+            // 
+            this.btnShowFrmAddNewEmployee.BackColor = System.Drawing.Color.Red;
+            this.btnShowFrmAddNewEmployee.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnShowFrmAddNewEmployee.FlatAppearance.BorderSize = 0;
+            this.btnShowFrmAddNewEmployee.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnShowFrmAddNewEmployee.Font = new System.Drawing.Font("Khmer M1", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnShowFrmAddNewEmployee.ForeColor = System.Drawing.Color.White;
+            this.btnShowFrmAddNewEmployee.Image = global::EmployeeSalaryMGProj.Properties.Resources.icons8_add_user_male_30px_1;
+            this.btnShowFrmAddNewEmployee.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnShowFrmAddNewEmployee.Location = new System.Drawing.Point(3, 66);
+            this.btnShowFrmAddNewEmployee.Name = "btnShowFrmAddNewEmployee";
+            this.btnShowFrmAddNewEmployee.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnShowFrmAddNewEmployee.Size = new System.Drawing.Size(260, 57);
+            this.btnShowFrmAddNewEmployee.TabIndex = 0;
+            this.btnShowFrmAddNewEmployee.TabStop = false;
+            this.btnShowFrmAddNewEmployee.Text = "បង្កើតបុគ្គលិកថ្មី";
+            this.btnShowFrmAddNewEmployee.UseVisualStyleBackColor = false;
+            this.btnShowFrmAddNewEmployee.Click += new System.EventHandler(this.btnShowFrmAddNewEmployee_Click);
             // 
             // btnShowFrmSalaryPayment
             // 
@@ -111,9 +123,12 @@
             this.btnShowFrmSalaryPayment.FlatAppearance.BorderSize = 0;
             this.btnShowFrmSalaryPayment.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnShowFrmSalaryPayment.Font = new System.Drawing.Font("Khmer M1", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnShowFrmSalaryPayment.Image = ((System.Drawing.Image)(resources.GetObject("btnShowFrmSalaryPayment.Image")));
+            this.btnShowFrmSalaryPayment.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnShowFrmSalaryPayment.Location = new System.Drawing.Point(3, 129);
             this.btnShowFrmSalaryPayment.Name = "btnShowFrmSalaryPayment";
-            this.btnShowFrmSalaryPayment.Size = new System.Drawing.Size(228, 57);
+            this.btnShowFrmSalaryPayment.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnShowFrmSalaryPayment.Size = new System.Drawing.Size(260, 57);
             this.btnShowFrmSalaryPayment.TabIndex = 2;
             this.btnShowFrmSalaryPayment.TabStop = false;
             this.btnShowFrmSalaryPayment.Text = "ប្រតិបត្តិការបើកប្រាក់ខែ";
@@ -127,9 +142,12 @@
             this.btnShowFrmDepartment.FlatAppearance.BorderSize = 0;
             this.btnShowFrmDepartment.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnShowFrmDepartment.Font = new System.Drawing.Font("Khmer M1", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnShowFrmDepartment.Image = ((System.Drawing.Image)(resources.GetObject("btnShowFrmDepartment.Image")));
+            this.btnShowFrmDepartment.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnShowFrmDepartment.Location = new System.Drawing.Point(3, 192);
             this.btnShowFrmDepartment.Name = "btnShowFrmDepartment";
-            this.btnShowFrmDepartment.Size = new System.Drawing.Size(228, 57);
+            this.btnShowFrmDepartment.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnShowFrmDepartment.Size = new System.Drawing.Size(260, 57);
             this.btnShowFrmDepartment.TabIndex = 3;
             this.btnShowFrmDepartment.TabStop = false;
             this.btnShowFrmDepartment.Text = "ព័ត៌មានផ្នែក";
@@ -144,23 +162,37 @@
             this.btnShowFrmGrossSalary.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnShowFrmGrossSalary.Font = new System.Drawing.Font("Khmer M1", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnShowFrmGrossSalary.ForeColor = System.Drawing.Color.White;
+            this.btnShowFrmGrossSalary.Image = ((System.Drawing.Image)(resources.GetObject("btnShowFrmGrossSalary.Image")));
+            this.btnShowFrmGrossSalary.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnShowFrmGrossSalary.Location = new System.Drawing.Point(3, 255);
             this.btnShowFrmGrossSalary.Name = "btnShowFrmGrossSalary";
-            this.btnShowFrmGrossSalary.Size = new System.Drawing.Size(228, 57);
+            this.btnShowFrmGrossSalary.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnShowFrmGrossSalary.Size = new System.Drawing.Size(260, 57);
             this.btnShowFrmGrossSalary.TabIndex = 4;
             this.btnShowFrmGrossSalary.TabStop = false;
             this.btnShowFrmGrossSalary.Text = "ព័ត៌មានផ្សេងៗ";
             this.btnShowFrmGrossSalary.UseVisualStyleBackColor = false;
             this.btnShowFrmGrossSalary.Click += new System.EventHandler(this.btnShowFrmGrossSalary_Click);
             // 
-            // mainPanel
+            // btnShowFrmUser
             // 
-            this.mainPanel.BackColor = System.Drawing.Color.White;
-            this.mainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.mainPanel.Location = new System.Drawing.Point(235, 60);
-            this.mainPanel.Name = "mainPanel";
-            this.mainPanel.Size = new System.Drawing.Size(1047, 693);
-            this.mainPanel.TabIndex = 11;
+            this.btnShowFrmUser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnShowFrmUser.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnShowFrmUser.FlatAppearance.BorderSize = 0;
+            this.btnShowFrmUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnShowFrmUser.Font = new System.Drawing.Font("Khmer M1", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnShowFrmUser.ForeColor = System.Drawing.Color.White;
+            this.btnShowFrmUser.Image = ((System.Drawing.Image)(resources.GetObject("btnShowFrmUser.Image")));
+            this.btnShowFrmUser.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnShowFrmUser.Location = new System.Drawing.Point(3, 318);
+            this.btnShowFrmUser.Name = "btnShowFrmUser";
+            this.btnShowFrmUser.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnShowFrmUser.Size = new System.Drawing.Size(260, 57);
+            this.btnShowFrmUser.TabIndex = 6;
+            this.btnShowFrmUser.TabStop = false;
+            this.btnShowFrmUser.Text = "ព័ត៌មានអ្នកប្រើប្រាស់ប្រព័ន្ធ";
+            this.btnShowFrmUser.UseVisualStyleBackColor = false;
+            this.btnShowFrmUser.Click += new System.EventHandler(this.btnShowFrmUser_Click);
             // 
             // btnCloseApp
             // 
@@ -170,14 +202,26 @@
             this.btnCloseApp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCloseApp.Font = new System.Drawing.Font("Khmer M1", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCloseApp.ForeColor = System.Drawing.Color.White;
-            this.btnCloseApp.Location = new System.Drawing.Point(3, 318);
+            this.btnCloseApp.Image = ((System.Drawing.Image)(resources.GetObject("btnCloseApp.Image")));
+            this.btnCloseApp.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCloseApp.Location = new System.Drawing.Point(3, 381);
             this.btnCloseApp.Name = "btnCloseApp";
-            this.btnCloseApp.Size = new System.Drawing.Size(228, 57);
+            this.btnCloseApp.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnCloseApp.Size = new System.Drawing.Size(260, 57);
             this.btnCloseApp.TabIndex = 5;
             this.btnCloseApp.TabStop = false;
             this.btnCloseApp.Text = "ចាកចេញពីប្រព័ន្ធ";
             this.btnCloseApp.UseVisualStyleBackColor = false;
             this.btnCloseApp.Click += new System.EventHandler(this.btnCloseApp_Click);
+            // 
+            // mainPanel
+            // 
+            this.mainPanel.BackColor = System.Drawing.Color.White;
+            this.mainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.mainPanel.Location = new System.Drawing.Point(271, 60);
+            this.mainPanel.Name = "mainPanel";
+            this.mainPanel.Size = new System.Drawing.Size(1011, 693);
+            this.mainPanel.TabIndex = 11;
             // 
             // FrmHome
             // 
@@ -208,5 +252,6 @@
         private System.Windows.Forms.Button btnShowFrmGrossSalary;
         private System.Windows.Forms.Panel mainPanel;
         private System.Windows.Forms.Button btnCloseApp;
+        private System.Windows.Forms.Button btnShowFrmUser;
     }
 }

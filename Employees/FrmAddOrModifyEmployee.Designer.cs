@@ -118,6 +118,7 @@
             // baseSalaryLabel
             // 
             baseSalaryLabel.AutoSize = true;
+            baseSalaryLabel.BackColor = System.Drawing.Color.Transparent;
             baseSalaryLabel.Location = new System.Drawing.Point(16, 315);
             baseSalaryLabel.Name = "baseSalaryLabel";
             baseSalaryLabel.Size = new System.Drawing.Size(121, 33);
@@ -164,6 +165,7 @@
             this.tableAdapterManager.EmployeesTableAdapter = this.employeesTableAdapter;
             this.tableAdapterManager.GrossSalariesTableAdapter = null;
             this.tableAdapterManager.GrossTypesTableAdapter = null;
+            this.tableAdapterManager.MonthsTableAdapter = null;
             this.tableAdapterManager.PaymentStatesTableAdapter = null;
             this.tableAdapterManager.RolesTableAdapter = null;
             this.tableAdapterManager.SalaryPaymentGrossTableAdapter = null;
@@ -270,7 +272,7 @@
             // 
             // lblTitle
             // 
-            this.lblTitle.BackColor = System.Drawing.Color.Navy;
+            this.lblTitle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.lblTitle.Dock = System.Windows.Forms.DockStyle.Top;
             this.lblTitle.Font = new System.Drawing.Font("Khmer M1", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitle.ForeColor = System.Drawing.Color.White;
@@ -327,6 +329,8 @@
             // FrmAddOrModifyEmployee
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(432, 553);
             this.Controls.Add(this.btnUpdateBaseSalary);
             this.Controls.Add(this.btnCancel);
@@ -348,6 +352,7 @@
             this.Controls.Add(this.departmentIdComboBox);
             this.Controls.Add(activeLabel);
             this.Controls.Add(this.activeCheckBox);
+            this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Khmer OS Siemreap", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;

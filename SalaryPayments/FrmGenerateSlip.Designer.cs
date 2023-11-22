@@ -36,10 +36,13 @@
             System.Windows.Forms.Label label1;
             System.Windows.Forms.Label label2;
             System.Windows.Forms.Label label3;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmGenerateSlip));
             this.employeeSalaryMGDataSet = new EmployeeSalaryMGProj.EmployeeSalaryMGDataSet();
             this.employeesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.employeesTableAdapter = new EmployeeSalaryMGProj.EmployeeSalaryMGDataSetTableAdapters.EmployeesTableAdapter();
             this.tableAdapterManager = new EmployeeSalaryMGProj.EmployeeSalaryMGDataSetTableAdapters.TableAdapterManager();
+            this.salaryPaymentGrossTableAdapter = new EmployeeSalaryMGProj.EmployeeSalaryMGDataSetTableAdapters.SalaryPaymentGrossTableAdapter();
+            this.salaryPaymentsTableAdapter = new EmployeeSalaryMGProj.EmployeeSalaryMGDataSetTableAdapters.SalaryPaymentsTableAdapter();
             this.employeeIdTextBox = new System.Windows.Forms.TextBox();
             this.txtEmployeeName = new System.Windows.Forms.TextBox();
             this.baseSalaryTextBox = new System.Windows.Forms.TextBox();
@@ -60,11 +63,10 @@
             this.btnCancel = new System.Windows.Forms.Button();
             this.dateTimePickerGeneratedSlip = new System.Windows.Forms.DateTimePicker();
             this.cbMonth = new System.Windows.Forms.ComboBox();
-            this.cbYear = new System.Windows.Forms.ComboBox();
             this.monthsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.cbYear = new System.Windows.Forms.ComboBox();
             this.monthsTableAdapter = new EmployeeSalaryMGProj.EmployeeSalaryMGDataSetTableAdapters.MonthsTableAdapter();
-            this.salaryPaymentsTableAdapter = new EmployeeSalaryMGProj.EmployeeSalaryMGDataSetTableAdapters.SalaryPaymentsTableAdapter();
-            this.salaryPaymentGrossTableAdapter = new EmployeeSalaryMGProj.EmployeeSalaryMGDataSetTableAdapters.SalaryPaymentGrossTableAdapter();
+            this.panel1 = new System.Windows.Forms.Panel();
             employeeIdLabel = new System.Windows.Forms.Label();
             firstNameLabel = new System.Windows.Forms.Label();
             baseSalaryLabel = new System.Windows.Forms.Label();
@@ -79,12 +81,13 @@
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.vSalaryDeductionBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.monthsBindingSource)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // employeeIdLabel
             // 
             employeeIdLabel.AutoSize = true;
-            employeeIdLabel.Location = new System.Drawing.Point(20, 20);
+            employeeIdLabel.Location = new System.Drawing.Point(10, 17);
             employeeIdLabel.Name = "employeeIdLabel";
             employeeIdLabel.Size = new System.Drawing.Size(82, 31);
             employeeIdLabel.TabIndex = 1;
@@ -93,7 +96,7 @@
             // firstNameLabel
             // 
             firstNameLabel.AutoSize = true;
-            firstNameLabel.Location = new System.Drawing.Point(20, 65);
+            firstNameLabel.Location = new System.Drawing.Point(10, 62);
             firstNameLabel.Name = "firstNameLabel";
             firstNameLabel.Size = new System.Drawing.Size(117, 31);
             firstNameLabel.TabIndex = 3;
@@ -102,7 +105,7 @@
             // baseSalaryLabel
             // 
             baseSalaryLabel.AutoSize = true;
-            baseSalaryLabel.Location = new System.Drawing.Point(20, 115);
+            baseSalaryLabel.Location = new System.Drawing.Point(10, 112);
             baseSalaryLabel.Name = "baseSalaryLabel";
             baseSalaryLabel.Size = new System.Drawing.Size(114, 31);
             baseSalaryLabel.TabIndex = 11;
@@ -111,7 +114,7 @@
             // departmentIdLabel
             // 
             departmentIdLabel.AutoSize = true;
-            departmentIdLabel.Location = new System.Drawing.Point(392, 115);
+            departmentIdLabel.Location = new System.Drawing.Point(382, 112);
             departmentIdLabel.Name = "departmentIdLabel";
             departmentIdLabel.Size = new System.Drawing.Size(94, 31);
             departmentIdLabel.TabIndex = 13;
@@ -120,7 +123,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new System.Drawing.Point(15, 188);
+            label1.Location = new System.Drawing.Point(5, 185);
             label1.Name = "label1";
             label1.Size = new System.Drawing.Size(180, 31);
             label1.TabIndex = 11;
@@ -129,7 +132,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new System.Drawing.Point(454, 188);
+            label2.Location = new System.Drawing.Point(444, 185);
             label2.Name = "label2";
             label2.Size = new System.Drawing.Size(104, 31);
             label2.TabIndex = 13;
@@ -138,7 +141,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new System.Drawing.Point(696, 186);
+            label3.Location = new System.Drawing.Point(686, 183);
             label3.Name = "label3";
             label3.Size = new System.Drawing.Size(104, 31);
             label3.TabIndex = 13;
@@ -174,11 +177,19 @@
             this.tableAdapterManager.UpdateOrder = EmployeeSalaryMGProj.EmployeeSalaryMGDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             this.tableAdapterManager.UsersTableAdapter = null;
             // 
+            // salaryPaymentGrossTableAdapter
+            // 
+            this.salaryPaymentGrossTableAdapter.ClearBeforeFill = true;
+            // 
+            // salaryPaymentsTableAdapter
+            // 
+            this.salaryPaymentsTableAdapter.ClearBeforeFill = true;
+            // 
             // employeeIdTextBox
             // 
             this.employeeIdTextBox.BackColor = System.Drawing.Color.WhiteSmoke;
             this.employeeIdTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.employeesBindingSource, "EmployeeId", true));
-            this.employeeIdTextBox.Location = new System.Drawing.Point(151, 17);
+            this.employeeIdTextBox.Location = new System.Drawing.Point(141, 14);
             this.employeeIdTextBox.Name = "employeeIdTextBox";
             this.employeeIdTextBox.ReadOnly = true;
             this.employeeIdTextBox.Size = new System.Drawing.Size(200, 39);
@@ -189,7 +200,7 @@
             // 
             this.txtEmployeeName.BackColor = System.Drawing.Color.WhiteSmoke;
             this.txtEmployeeName.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.employeesBindingSource, "FirstName", true));
-            this.txtEmployeeName.Location = new System.Drawing.Point(151, 64);
+            this.txtEmployeeName.Location = new System.Drawing.Point(141, 61);
             this.txtEmployeeName.Name = "txtEmployeeName";
             this.txtEmployeeName.ReadOnly = true;
             this.txtEmployeeName.Size = new System.Drawing.Size(316, 39);
@@ -200,7 +211,7 @@
             // 
             this.baseSalaryTextBox.BackColor = System.Drawing.Color.WhiteSmoke;
             this.baseSalaryTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.employeesBindingSource, "BaseSalary", true));
-            this.baseSalaryTextBox.Location = new System.Drawing.Point(151, 111);
+            this.baseSalaryTextBox.Location = new System.Drawing.Point(141, 108);
             this.baseSalaryTextBox.Name = "baseSalaryTextBox";
             this.baseSalaryTextBox.ReadOnly = true;
             this.baseSalaryTextBox.Size = new System.Drawing.Size(200, 39);
@@ -210,7 +221,7 @@
             // txtDepartment
             // 
             this.txtDepartment.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.txtDepartment.Location = new System.Drawing.Point(492, 112);
+            this.txtDepartment.Location = new System.Drawing.Point(482, 109);
             this.txtDepartment.Name = "txtDepartment";
             this.txtDepartment.ReadOnly = true;
             this.txtDepartment.Size = new System.Drawing.Size(200, 39);
@@ -231,6 +242,8 @@
             // 
             // benefitflowLayoutPanel
             // 
+            this.benefitflowLayoutPanel.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("benefitflowLayoutPanel.BackgroundImage")));
+            this.benefitflowLayoutPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.benefitflowLayoutPanel.Location = new System.Drawing.Point(6, 84);
             this.benefitflowLayoutPanel.Name = "benefitflowLayoutPanel";
             this.benefitflowLayoutPanel.Size = new System.Drawing.Size(443, 341);
@@ -284,6 +297,8 @@
             // 
             // deductionflowLayoutPanel
             // 
+            this.deductionflowLayoutPanel.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("deductionflowLayoutPanel.BackgroundImage")));
+            this.deductionflowLayoutPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.deductionflowLayoutPanel.Location = new System.Drawing.Point(6, 84);
             this.deductionflowLayoutPanel.Name = "deductionflowLayoutPanel";
             this.deductionflowLayoutPanel.Size = new System.Drawing.Size(443, 341);
@@ -367,10 +382,11 @@
             // 
             this.dateTimePickerGeneratedSlip.CustomFormat = "dd-MM-yyyy";
             this.dateTimePickerGeneratedSlip.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePickerGeneratedSlip.Location = new System.Drawing.Point(201, 182);
+            this.dateTimePickerGeneratedSlip.Location = new System.Drawing.Point(191, 179);
             this.dateTimePickerGeneratedSlip.Name = "dateTimePickerGeneratedSlip";
             this.dateTimePickerGeneratedSlip.Size = new System.Drawing.Size(240, 39);
             this.dateTimePickerGeneratedSlip.TabIndex = 19;
+            this.dateTimePickerGeneratedSlip.TabStop = false;
             // 
             // cbMonth
             // 
@@ -378,11 +394,17 @@
             this.cbMonth.DisplayMember = "Name";
             this.cbMonth.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbMonth.FormattingEnabled = true;
-            this.cbMonth.Location = new System.Drawing.Point(564, 182);
+            this.cbMonth.Location = new System.Drawing.Point(554, 179);
             this.cbMonth.Name = "cbMonth";
             this.cbMonth.Size = new System.Drawing.Size(121, 39);
             this.cbMonth.TabIndex = 20;
+            this.cbMonth.TabStop = false;
             this.cbMonth.ValueMember = "MonthId";
+            // 
+            // monthsBindingSource
+            // 
+            this.monthsBindingSource.DataMember = "Months";
+            this.monthsBindingSource.DataSource = this.employeeSalaryMGDataSet;
             // 
             // cbYear
             // 
@@ -407,50 +429,49 @@
             "2038",
             "2039",
             "2040"});
-            this.cbYear.Location = new System.Drawing.Point(805, 182);
+            this.cbYear.Location = new System.Drawing.Point(795, 179);
             this.cbYear.Name = "cbYear";
             this.cbYear.Size = new System.Drawing.Size(121, 39);
             this.cbYear.TabIndex = 20;
-            // 
-            // monthsBindingSource
-            // 
-            this.monthsBindingSource.DataMember = "Months";
-            this.monthsBindingSource.DataSource = this.employeeSalaryMGDataSet;
+            this.cbYear.TabStop = false;
             // 
             // monthsTableAdapter
             // 
             this.monthsTableAdapter.ClearBeforeFill = true;
             // 
-            // salaryPaymentsTableAdapter
+            // panel1
             // 
-            this.salaryPaymentsTableAdapter.ClearBeforeFill = true;
-            // 
-            // salaryPaymentGrossTableAdapter
-            // 
-            this.salaryPaymentGrossTableAdapter.ClearBeforeFill = true;
+            this.panel1.BackColor = System.Drawing.Color.Transparent;
+            this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
+            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.panel1.Controls.Add(this.employeeIdTextBox);
+            this.panel1.Controls.Add(this.cbYear);
+            this.panel1.Controls.Add(departmentIdLabel);
+            this.panel1.Controls.Add(this.cbMonth);
+            this.panel1.Controls.Add(label2);
+            this.panel1.Controls.Add(this.dateTimePickerGeneratedSlip);
+            this.panel1.Controls.Add(this.baseSalaryTextBox);
+            this.panel1.Controls.Add(label3);
+            this.panel1.Controls.Add(baseSalaryLabel);
+            this.panel1.Controls.Add(label1);
+            this.panel1.Controls.Add(this.txtDepartment);
+            this.panel1.Controls.Add(employeeIdLabel);
+            this.panel1.Controls.Add(this.txtEmployeeName);
+            this.panel1.Controls.Add(firstNameLabel);
+            this.panel1.Location = new System.Drawing.Point(12, 6);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(924, 245);
+            this.panel1.TabIndex = 21;
             // 
             // FrmGenerateSlip
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(948, 741);
-            this.Controls.Add(this.cbYear);
-            this.Controls.Add(this.cbMonth);
-            this.Controls.Add(this.dateTimePickerGeneratedSlip);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnSubmit);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(employeeIdLabel);
-            this.Controls.Add(this.employeeIdTextBox);
-            this.Controls.Add(firstNameLabel);
-            this.Controls.Add(this.txtEmployeeName);
-            this.Controls.Add(this.txtDepartment);
-            this.Controls.Add(label1);
-            this.Controls.Add(baseSalaryLabel);
-            this.Controls.Add(label3);
-            this.Controls.Add(this.baseSalaryTextBox);
-            this.Controls.Add(label2);
-            this.Controls.Add(departmentIdLabel);
             this.Font = new System.Drawing.Font("Khmer OS Siemreap", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
@@ -466,8 +487,9 @@
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.vSalaryDeductionBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.monthsBindingSource)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -502,5 +524,6 @@
         private EmployeeSalaryMGDataSetTableAdapters.MonthsTableAdapter monthsTableAdapter;
         private EmployeeSalaryMGDataSetTableAdapters.SalaryPaymentsTableAdapter salaryPaymentsTableAdapter;
         private EmployeeSalaryMGDataSetTableAdapters.SalaryPaymentGrossTableAdapter salaryPaymentGrossTableAdapter;
+        private System.Windows.Forms.Panel panel1;
     }
 }

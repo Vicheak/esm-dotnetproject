@@ -14,6 +14,8 @@ namespace EmployeeSalaryMGProj
 {
     public partial class FrmDepartment : Form
     {
+        public EmployeeSalaryMGDataSet.UsersRow usersRow { get; set; }
+
         public FrmDepartment()
         {
             InitializeComponent();
@@ -24,6 +26,14 @@ namespace EmployeeSalaryMGProj
             this.departmentsTableAdapter.Fill(this.employeeSalaryMGDataSet.Departments);
 
             lblGeneratedString.Text = string.Empty; 
+
+            if(usersRow.RoleId == 2) //accountant
+            {
+                btnAddNew.Visible = false; 
+                btnSave.Visible = false;
+                btnCancel.Visible = false;
+                btnDelete.Visible = false;
+            }
         }
 
         private void btnAddNew_Click(object sender, EventArgs e)

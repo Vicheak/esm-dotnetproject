@@ -18,6 +18,8 @@ namespace EmployeeSalaryMGProj
         public FrmChooseEmployeeToGetSlip frmChooseEmployeeToGetSlip;
         public FrmDepartment frmDepartment;
         public FrmGrossSalary frmGrossSalary;
+        public Users.FrmUser frmUser;
+        public Users.FrmLogin frmLogin = new Users.FrmLogin(); 
 
         public FrmHome()
         {
@@ -26,12 +28,56 @@ namespace EmployeeSalaryMGProj
 
         private void FrmHome_Load(object sender, EventArgs e)
         {
-            btnShowFrmEmployee.PerformClick(); 
+            Login(); 
+        }
+
+        private void Login()
+        {
+            //open login windows before main view
+            frmLogin.ShowDialog();
+
+            if (frmLogin.DialogResult == DialogResult.Cancel)
+            {
+                this.Close();
+            }
+            else if (frmLogin.DialogResult == DialogResult.OK)
+            {
+                if (frmLogin.userRow.RoleId == 1) //admin
+                {
+                    btnShowFrmAddNewEmployee.Visible = true;
+                    btnShowFrmUser.Visible = true; 
+                }
+                else if (frmLogin.userRow.RoleId == 2) //accountant
+                {
+                    btnShowFrmAddNewEmployee.Visible = false;
+                    btnShowFrmUser.Visible = false;
+                }
+
+                //open the main form by auto clicked button
+                //btnShowFrmEmployee.PerformClick();
+                PopUpForm(new FrmEmployee() { usersRow = frmLogin.userRow });
+            }
+        }
+
+        private void btnCloseApp_Click(object sender, EventArgs e)
+        {
+            //hide home form
+            this.Visible = false;
+
+            //clear all login fields after logout 
+            frmLogin.usernameTextBox.Clear(); 
+            frmLogin.passwordTextBox.Clear();
+
+            Login();
+
+            //show home form back after a successfull login
+            if(!this.IsDisposed)
+                this.Visible = true; 
         }
 
         private void btnShowFrmEmployee_Click(object sender, EventArgs e)
         {
-            frmEmployee = new FrmEmployee();
+            frmEmployee = new FrmEmployee() { usersRow = frmLogin.userRow };
 
             PopUpForm(frmEmployee);
         }
@@ -64,21 +110,23 @@ namespace EmployeeSalaryMGProj
 
         private void btnShowFrmDepartment_Click(object sender, EventArgs e)
         {
-            frmDepartment = new FrmDepartment();
+            frmDepartment = new FrmDepartment() { usersRow = frmLogin.userRow };
 
             PopUpForm(frmDepartment); 
         }
 
         private void btnShowFrmGrossSalary_Click(object sender, EventArgs e)
         {
-            frmGrossSalary = new FrmGrossSalary();
+            frmGrossSalary = new FrmGrossSalary() { userRow = frmLogin.userRow };
 
             PopUpForm(frmGrossSalary);
         }
 
-        private void btnCloseApp_Click(object sender, EventArgs e)
+        private void btnShowFrmUser_Click(object sender, EventArgs e)
         {
-            this.Close(); 
+            frmUser = new Users.FrmUser();
+
+            PopUpForm(frmUser);
         }
     }
 }

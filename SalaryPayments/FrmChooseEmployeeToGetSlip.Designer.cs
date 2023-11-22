@@ -87,7 +87,7 @@
             // 
             // label1
             // 
-            this.label1.BackColor = System.Drawing.Color.Navy;
+            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.label1.Dock = System.Windows.Forms.DockStyle.Top;
             this.label1.Font = new System.Drawing.Font("Khmer M1", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
@@ -149,7 +149,7 @@
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1458, 474);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1458, 566);
             this.tableLayoutPanel1.TabIndex = 13;
             // 
             // vSalaryPaymentDetaildataGridView
@@ -201,7 +201,7 @@
             this.vSalaryPaymentDetaildataGridView.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.vSalaryPaymentDetaildataGridView.RowTemplate.Height = 40;
             this.vSalaryPaymentDetaildataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.vSalaryPaymentDetaildataGridView.Size = new System.Drawing.Size(869, 468);
+            this.vSalaryPaymentDetaildataGridView.Size = new System.Drawing.Size(869, 560);
             this.vSalaryPaymentDetaildataGridView.TabIndex = 1;
             this.vSalaryPaymentDetaildataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.vSalaryPaymentDetaildataGridView_CellContentClick);
             this.vSalaryPaymentDetaildataGridView.Paint += new System.Windows.Forms.PaintEventHandler(this.vSalaryPaymentDetaildataGridView_Paint);
@@ -227,7 +227,7 @@
             // employeeNameDataGridViewTextBoxColumn
             // 
             this.employeeNameDataGridViewTextBoxColumn.DataPropertyName = "EmployeeName";
-            this.employeeNameDataGridViewTextBoxColumn.HeaderText = "ឈ្នោះបុគ្គលិក";
+            this.employeeNameDataGridViewTextBoxColumn.HeaderText = "ឈ្មោះបុគ្គលិក";
             this.employeeNameDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.employeeNameDataGridViewTextBoxColumn.Name = "employeeNameDataGridViewTextBoxColumn";
             this.employeeNameDataGridViewTextBoxColumn.ReadOnly = true;
@@ -370,7 +370,7 @@
             this.employeesDataGridView.RowHeadersWidth = 51;
             this.employeesDataGridView.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.employeesDataGridView.RowTemplate.Height = 40;
-            this.employeesDataGridView.Size = new System.Drawing.Size(577, 468);
+            this.employeesDataGridView.Size = new System.Drawing.Size(577, 560);
             this.employeesDataGridView.TabIndex = 0;
             this.employeesDataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.employeesDataGridView_CellClick);
             this.employeesDataGridView.Paint += new System.Windows.Forms.PaintEventHandler(this.employeesDataGridView_Paint);
@@ -488,7 +488,7 @@
             this.btnGenerateSlip.FlatAppearance.BorderSize = 0;
             this.btnGenerateSlip.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnGenerateSlip.ForeColor = System.Drawing.Color.White;
-            this.btnGenerateSlip.Location = new System.Drawing.Point(414, 120);
+            this.btnGenerateSlip.Location = new System.Drawing.Point(266, 120);
             this.btnGenerateSlip.Name = "btnGenerateSlip";
             this.btnGenerateSlip.Size = new System.Drawing.Size(174, 41);
             this.btnGenerateSlip.TabIndex = 0;
@@ -537,7 +537,7 @@
             // FrmChooseEmployeeToGetSlip
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(1482, 653);
+            this.ClientSize = new System.Drawing.Size(1482, 745);
             this.Controls.Add(this.btnCancelPaymentStatus);
             this.Controls.Add(this.btnSetPaymentStatus);
             this.Controls.Add(this.btnGenerateSlip);
@@ -593,6 +593,7 @@
         private System.Windows.Forms.Button btnSetPaymentStatus;
         private System.Windows.Forms.Button btnCancelPaymentStatus;
         private EmployeeSalaryMGDataSetTableAdapters.SalaryPaymentsTableAdapter salaryPaymentsTableAdapter;
+        private EmployeeSalaryMGDataSetTableAdapters.SalaryPaymentGrossTableAdapter salaryPaymentGrossTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn salaryPaymentIdDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn employeeIdDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn employeeNameDataGridViewTextBoxColumn;
@@ -606,6 +607,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn statusDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn paymentDateDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewImageColumn ColumnEmpty;
-        private EmployeeSalaryMGDataSetTableAdapters.SalaryPaymentGrossTableAdapter salaryPaymentGrossTableAdapter;
     }
 }

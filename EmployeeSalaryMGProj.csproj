@@ -116,6 +116,18 @@
     <Compile Include="SalaryPayments\UserControlSalaryGross.Designer.cs">
       <DependentUpon>UserControlSalaryGross.cs</DependentUpon>
     </Compile>
+    <Compile Include="Users\FrmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Users\FrmLogin.Designer.cs">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Users\FrmUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Users\FrmUser.Designer.cs">
+      <DependentUpon>FrmUser.cs</DependentUpon>
+    </Compile>
     <Compile Include="Utility\CheckUtil.cs" />
     <EmbeddedResource Include="Employees\FrmAddOrModifyEmployee.resx">
       <DependentUpon>FrmAddOrModifyEmployee.cs</DependentUpon>
@@ -156,6 +168,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SalaryPayments\UserControlSalaryGross.resx">
       <DependentUpon>UserControlSalaryGross.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Users\FrmLogin.resx">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Users\FrmUser.resx">
+      <DependentUpon>FrmUser.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="EmployeeSalaryMGDataSet.xsc">
       <DependentUpon>EmployeeSalaryMGDataSet.xsd</DependentUpon>

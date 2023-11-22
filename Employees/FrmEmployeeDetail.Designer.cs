@@ -87,6 +87,7 @@
             this.vSalaryPaymentDetailTableAdapter = new EmployeeSalaryMGProj.EmployeeSalaryMGDataSetTableAdapters.VSalaryPaymentDetailTableAdapter();
             this.departmentsTableAdapter = new EmployeeSalaryMGProj.EmployeeSalaryMGDataSetTableAdapters.DepartmentsTableAdapter();
             this.monthsTableAdapter = new EmployeeSalaryMGProj.EmployeeSalaryMGDataSetTableAdapters.MonthsTableAdapter();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             employeeIdLabel = new System.Windows.Forms.Label();
             firstNameLabel = new System.Windows.Forms.Label();
             lastNameLabel = new System.Windows.Forms.Label();
@@ -105,6 +106,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.monthsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vSalaryPaymentDetailBindingSource)).BeginInit();
             this.groupBox3.SuspendLayout();
+            this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // employeeIdLabel
@@ -197,9 +199,10 @@
             this.groupBox1.Controls.Add(this.departmentTextBox);
             this.groupBox1.Controls.Add(activeLabel);
             this.groupBox1.Controls.Add(this.activeTextBox);
-            this.groupBox1.Location = new System.Drawing.Point(12, 12);
+            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox1.Location = new System.Drawing.Point(3, 3);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(682, 264);
+            this.groupBox1.Size = new System.Drawing.Size(689, 260);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "ព័ត៌មានបឋមរបស់បុគ្គលិក";
@@ -332,6 +335,9 @@
             dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
             this.baseSalaryLogDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.baseSalaryLogDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.baseSalaryLogDataGridView.AutoGenerateColumns = false;
             this.baseSalaryLogDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.baseSalaryLogDataGridView.BackgroundColor = System.Drawing.Color.White;
@@ -361,7 +367,7 @@
             this.baseSalaryLogDataGridView.RowHeadersWidth = 51;
             this.baseSalaryLogDataGridView.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.baseSalaryLogDataGridView.RowTemplate.Height = 40;
-            this.baseSalaryLogDataGridView.Size = new System.Drawing.Size(556, 211);
+            this.baseSalaryLogDataGridView.Size = new System.Drawing.Size(549, 212);
             this.baseSalaryLogDataGridView.TabIndex = 1;
             this.baseSalaryLogDataGridView.Paint += new System.Windows.Forms.PaintEventHandler(this.baseSalaryLogDataGridView_Paint);
             // 
@@ -422,9 +428,10 @@
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.baseSalaryLogDataGridView);
-            this.groupBox2.Location = new System.Drawing.Point(700, 12);
+            this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox2.Location = new System.Drawing.Point(698, 3);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(577, 264);
+            this.groupBox2.Size = new System.Drawing.Size(564, 260);
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "តាមដានប្រវត្តិនៃការប្រែប្រួលប្រាក់ខែ";
@@ -439,6 +446,9 @@
             dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
             this.vSalaryPaymentDetailDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            this.vSalaryPaymentDetailDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.vSalaryPaymentDetailDataGridView.AutoGenerateColumns = false;
             this.vSalaryPaymentDetailDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.vSalaryPaymentDetailDataGridView.BackgroundColor = System.Drawing.Color.White;
@@ -468,14 +478,14 @@
             this.paymentDateDataGridViewTextBoxColumn});
             this.vSalaryPaymentDetailDataGridView.DataSource = this.vSalaryPaymentDetailBindingSource;
             this.vSalaryPaymentDetailDataGridView.EnableHeadersVisualStyles = false;
-            this.vSalaryPaymentDetailDataGridView.Location = new System.Drawing.Point(24, 38);
+            this.vSalaryPaymentDetailDataGridView.Location = new System.Drawing.Point(6, 38);
             this.vSalaryPaymentDetailDataGridView.Name = "vSalaryPaymentDetailDataGridView";
             this.vSalaryPaymentDetailDataGridView.ReadOnly = true;
             this.vSalaryPaymentDetailDataGridView.RowHeadersVisible = false;
             this.vSalaryPaymentDetailDataGridView.RowHeadersWidth = 51;
             this.vSalaryPaymentDetailDataGridView.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.vSalaryPaymentDetailDataGridView.RowTemplate.Height = 40;
-            this.vSalaryPaymentDetailDataGridView.Size = new System.Drawing.Size(1217, 299);
+            this.vSalaryPaymentDetailDataGridView.Size = new System.Drawing.Size(1247, 290);
             this.vSalaryPaymentDetailDataGridView.TabIndex = 2;
             this.vSalaryPaymentDetailDataGridView.Paint += new System.Windows.Forms.PaintEventHandler(this.vSalaryPaymentDetailDataGridView_Paint);
             // 
@@ -608,10 +618,12 @@
             // 
             // groupBox3
             // 
+            this.tableLayoutPanel1.SetColumnSpan(this.groupBox3, 2);
             this.groupBox3.Controls.Add(this.vSalaryPaymentDetailDataGridView);
-            this.groupBox3.Location = new System.Drawing.Point(12, 282);
+            this.groupBox3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox3.Location = new System.Drawing.Point(3, 269);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(1265, 359);
+            this.groupBox3.Size = new System.Drawing.Size(1259, 334);
             this.groupBox3.TabIndex = 3;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "តាមដានប្រវត្តិនៃការបើកប្រាក់ខែ";
@@ -628,17 +640,32 @@
             // 
             this.monthsTableAdapter.ClearBeforeFill = true;
             // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel1.ColumnCount = 2;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.Controls.Add(this.groupBox1, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.groupBox3, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.groupBox2, 1, 0);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(12, 12);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 2;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1265, 606);
+            this.tableLayoutPanel1.TabIndex = 4;
+            // 
             // FrmEmployeeDetail
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(1289, 653);
-            this.Controls.Add(this.groupBox3);
-            this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.groupBox1);
+            this.ClientSize = new System.Drawing.Size(1289, 627);
+            this.Controls.Add(this.tableLayoutPanel1);
             this.Font = new System.Drawing.Font("Khmer OS Siemreap", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
             this.Name = "FrmEmployeeDetail";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmEmployeeDetail";
@@ -654,6 +681,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.monthsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vSalaryPaymentDetailBindingSource)).EndInit();
             this.groupBox3.ResumeLayout(false);
+            this.tableLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -701,5 +729,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn yearDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn statusDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn paymentDateDataGridViewTextBoxColumn;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
     }
 }

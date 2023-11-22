@@ -18,3 +18,5 @@ D:\Target document\C# programming\Revision\EmployeeSalaryMGProj\obj\Debug\Employ
 D:\Target document\C# programming\Revision\EmployeeSalaryMGProj\obj\Debug\EmployeeSalaryMGProj.SalaryPayments.UserControlSalaryGross.resources
 D:\Target document\C# programming\Revision\EmployeeSalaryMGProj\obj\Debug\EmployeeSalaryMGProj.Employees.FrmEmployeeDetail.resources
 D:\Target document\C# programming\Revision\EmployeeSalaryMGProj\obj\Debug\EmployeeSalaryMGProj.FrmHome.resources
+D:\Target document\C# programming\Revision\EmployeeSalaryMGProj\obj\Debug\EmployeeSalaryMGProj.Users.FrmUser.resources
+D:\Target document\C# programming\Revision\EmployeeSalaryMGProj\obj\Debug\EmployeeSalaryMGProj.Users.FrmLogin.resources
