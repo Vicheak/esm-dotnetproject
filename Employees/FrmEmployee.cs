@@ -13,6 +13,8 @@ namespace EmployeeSalaryMGProj
 {
     public partial class FrmEmployee : Form
     {
+        public EmployeeSalaryMGDataSet.UsersRow usersRow { get; set; }
+
         public FrmEmployee()
         {
             InitializeComponent();
@@ -21,6 +23,13 @@ namespace EmployeeSalaryMGProj
         private void FrmEmployee_Load(object sender, EventArgs e)
         { 
             this.employeesTableAdapter.Fill(this.employeeSalaryMGDataSet.Employees);
+
+            if(usersRow.RoleId == 2) //accountant
+            {
+                btnAddNew.Visible = false;
+                employeesDataGridView.Columns[8].Visible = false; 
+                employeesDataGridView.Columns[10].Visible = false; 
+            }
         }
 
         private void btnAddNew_Click(object sender, EventArgs e)

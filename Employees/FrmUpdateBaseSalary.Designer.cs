@@ -54,9 +54,54 @@
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
+            // firstNameLabel
+            // 
+            firstNameLabel.AutoSize = true;
+            firstNameLabel.Location = new System.Drawing.Point(22, 67);
+            firstNameLabel.Name = "firstNameLabel";
+            firstNameLabel.Size = new System.Drawing.Size(117, 31);
+            firstNameLabel.TabIndex = 19;
+            firstNameLabel.Text = "ឈ្មោះបុគ្គលិក៖";
+            // 
+            // baseSalaryLabel
+            // 
+            baseSalaryLabel.AutoSize = true;
+            baseSalaryLabel.Location = new System.Drawing.Point(22, 124);
+            baseSalaryLabel.Name = "baseSalaryLabel";
+            baseSalaryLabel.Size = new System.Drawing.Size(114, 31);
+            baseSalaryLabel.TabIndex = 20;
+            baseSalaryLabel.Text = "ប្រាក់ខែគោល៖";
+            // 
+            // dateLabel
+            // 
+            dateLabel.AutoSize = true;
+            dateLabel.Location = new System.Drawing.Point(15, 48);
+            dateLabel.Name = "dateLabel";
+            dateLabel.Size = new System.Drawing.Size(138, 31);
+            dateLabel.TabIndex = 23;
+            dateLabel.Text = "កាលបរិច្ឆេទប្រវត្តិ៖";
+            // 
+            // amountLabel
+            // 
+            amountLabel.AutoSize = true;
+            amountLabel.Location = new System.Drawing.Point(15, 93);
+            amountLabel.Name = "amountLabel";
+            amountLabel.Size = new System.Drawing.Size(118, 31);
+            amountLabel.TabIndex = 25;
+            amountLabel.Text = "ចំនួនទឹកប្រាក់៖";
+            // 
+            // descriptionLabel
+            // 
+            descriptionLabel.AutoSize = true;
+            descriptionLabel.Location = new System.Drawing.Point(15, 141);
+            descriptionLabel.Name = "descriptionLabel";
+            descriptionLabel.Size = new System.Drawing.Size(134, 31);
+            descriptionLabel.TabIndex = 27;
+            descriptionLabel.Text = "អធិប្បាយផ្សេងៗ៖";
+            // 
             // lblTitle
             // 
-            this.lblTitle.BackColor = System.Drawing.Color.Navy;
+            this.lblTitle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.lblTitle.Dock = System.Windows.Forms.DockStyle.Top;
             this.lblTitle.Font = new System.Drawing.Font("Khmer M1", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitle.ForeColor = System.Drawing.Color.White;
@@ -84,21 +129,13 @@
             this.tableAdapterManager.EmployeesTableAdapter = null;
             this.tableAdapterManager.GrossSalariesTableAdapter = null;
             this.tableAdapterManager.GrossTypesTableAdapter = null;
+            this.tableAdapterManager.MonthsTableAdapter = null;
             this.tableAdapterManager.PaymentStatesTableAdapter = null;
             this.tableAdapterManager.RolesTableAdapter = null;
             this.tableAdapterManager.SalaryPaymentGrossTableAdapter = null;
             this.tableAdapterManager.SalaryPaymentsTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = EmployeeSalaryMGProj.EmployeeSalaryMGDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             this.tableAdapterManager.UsersTableAdapter = null;
-            // 
-            // firstNameLabel
-            // 
-            firstNameLabel.AutoSize = true;
-            firstNameLabel.Location = new System.Drawing.Point(22, 67);
-            firstNameLabel.Name = "firstNameLabel";
-            firstNameLabel.Size = new System.Drawing.Size(117, 31);
-            firstNameLabel.TabIndex = 19;
-            firstNameLabel.Text = "ឈ្មោះបុគ្គលិក៖";
             // 
             // txtEmployeeName
             // 
@@ -110,15 +147,6 @@
             this.txtEmployeeName.TabIndex = 20;
             this.txtEmployeeName.TabStop = false;
             // 
-            // baseSalaryLabel
-            // 
-            baseSalaryLabel.AutoSize = true;
-            baseSalaryLabel.Location = new System.Drawing.Point(22, 124);
-            baseSalaryLabel.Name = "baseSalaryLabel";
-            baseSalaryLabel.Size = new System.Drawing.Size(114, 31);
-            baseSalaryLabel.TabIndex = 20;
-            baseSalaryLabel.Text = "ប្រាក់ខែគោល៖";
-            // 
             // txtBaseSalary
             // 
             this.txtBaseSalary.BackColor = System.Drawing.Color.WhiteSmoke;
@@ -129,15 +157,6 @@
             this.txtBaseSalary.TabIndex = 21;
             this.txtBaseSalary.TabStop = false;
             // 
-            // dateLabel
-            // 
-            dateLabel.AutoSize = true;
-            dateLabel.Location = new System.Drawing.Point(15, 48);
-            dateLabel.Name = "dateLabel";
-            dateLabel.Size = new System.Drawing.Size(138, 31);
-            dateLabel.TabIndex = 23;
-            dateLabel.Text = "កាលបរិច្ឆេទប្រវត្តិ៖";
-            // 
             // dateDateTimePicker
             // 
             this.dateDateTimePicker.CustomFormat = "dd-MM-yyyy";
@@ -147,30 +166,12 @@
             this.dateDateTimePicker.Size = new System.Drawing.Size(257, 39);
             this.dateDateTimePicker.TabIndex = 0;
             // 
-            // amountLabel
-            // 
-            amountLabel.AutoSize = true;
-            amountLabel.Location = new System.Drawing.Point(15, 93);
-            amountLabel.Name = "amountLabel";
-            amountLabel.Size = new System.Drawing.Size(118, 31);
-            amountLabel.TabIndex = 25;
-            amountLabel.Text = "ចំនួនទឹកប្រាក់៖";
-            // 
             // amountTextBox
             // 
             this.amountTextBox.Location = new System.Drawing.Point(159, 90);
             this.amountTextBox.Name = "amountTextBox";
             this.amountTextBox.Size = new System.Drawing.Size(257, 39);
             this.amountTextBox.TabIndex = 1;
-            // 
-            // descriptionLabel
-            // 
-            descriptionLabel.AutoSize = true;
-            descriptionLabel.Location = new System.Drawing.Point(15, 141);
-            descriptionLabel.Name = "descriptionLabel";
-            descriptionLabel.Size = new System.Drawing.Size(134, 31);
-            descriptionLabel.TabIndex = 27;
-            descriptionLabel.Text = "អធិប្បាយផ្សេងៗ៖";
             // 
             // descriptionTextBox
             // 

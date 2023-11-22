@@ -14,7 +14,9 @@ namespace EmployeeSalaryMGProj.SalaryPayments
 {
     public partial class FrmGrossSalary : Form
     {
-        private bool isValidAmount = false; 
+        private bool isValidAmount = false;
+
+        public EmployeeSalaryMGDataSet.UsersRow userRow { get; set; }
 
         public FrmGrossSalary()
         {
@@ -27,6 +29,14 @@ namespace EmployeeSalaryMGProj.SalaryPayments
             this.grossSalariesTableAdapter.Fill(this.employeeSalaryMGDataSet.GrossSalaries);
 
             lblShowError.Text = string.Empty; 
+
+            if (userRow.RoleId == 2) //accountant
+            {
+                btnAddNew.Visible = false;
+                btnSave.Visible = false; 
+                btnCancel.Visible = false;
+                btnDelete.Visible = false;
+            }
         }
 
         private void btnAddNew_Click(object sender, EventArgs e)
