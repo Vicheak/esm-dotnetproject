@@ -1,4 +1,5 @@
-﻿using System;
+﻿using EmployeeSalaryMGProj.SalaryPayments;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -16,7 +17,7 @@ namespace EmployeeSalaryMGProj
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new SalaryPayments.FrmChooseEmployeeToGetSlip());
+            Application.Run(new FrmEmployee());
         }
     }
 }

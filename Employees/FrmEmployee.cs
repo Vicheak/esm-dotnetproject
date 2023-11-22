@@ -1,4 +1,5 @@
-﻿using System;
+﻿using EmployeeSalaryMGProj.Employees;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -41,7 +42,7 @@ namespace EmployeeSalaryMGProj
             //Column Index = 8
             //Any Row except Row Index = -1 (header)
             if (e.RowIndex == -1) return; 
-            if(e.ColumnIndex == 8)
+            if (e.ColumnIndex == 8)
             {
                 FrmAddOrModifyEmployee frmAddOrModifyEmployee = new FrmAddOrModifyEmployee();
                 frmAddOrModifyEmployee.isAdded = false;
@@ -55,6 +56,61 @@ namespace EmployeeSalaryMGProj
                 }
 
                 frmAddOrModifyEmployee.ShowDialog(); 
+            }
+
+            if (e.ColumnIndex == 9)
+            {
+                FrmEmployeeDetail frmEmployeeDetail = new FrmEmployeeDetail();
+
+                //access employee current row
+                var currentEmployeeRow = this.employeesBindingSource.Current as DataRowView;
+                if (currentEmployeeRow != null)
+                {
+                    var employeesRow = currentEmployeeRow.Row as EmployeeSalaryMGDataSet.EmployeesRow;
+                    frmEmployeeDetail.employeesRow = employeesRow;
+                }
+
+                frmEmployeeDetail.ShowDialog(); 
+            }
+
+            if (e.ColumnIndex == 10)
+            {
+                //access employee current row
+                var currentEmployeeRow = this.employeesBindingSource.Current as DataRowView;
+                if (currentEmployeeRow != null)
+                {
+                    var employeesRow = currentEmployeeRow.Row as EmployeeSalaryMGDataSet.EmployeesRow;
+
+                    var result = MessageBox.Show($"Are you sure you want to remove employee with name {employeesRow.FirstName} {employeesRow.LastName}," +
+                        $" this record will effect all records in the system?", 
+                        "Confirmation", 
+                        MessageBoxButtons.OKCancel,
+                        MessageBoxIcon.Question); 
+
+                    if(result == DialogResult.OK)
+                    {
+                        //remove records from base salary log
+                        this.baseSalaryLogsTableAdapter.DeleteByEmployeeId(employeesRow.EmployeeId);
+
+                        //access rows from table salary payment
+                        var salaryPaymentDataTable = this.salaryPaymentsTableAdapter.GetDataByEmployeeId(employeesRow.EmployeeId);
+
+                        //remove records from salary payment gross 
+                        foreach (var salaryPaymentRow in salaryPaymentDataTable)
+                        {
+                            this.salaryPaymentGrossTableAdapter.DeleteBySalaryPaymentId(salaryPaymentRow.SalaryPaymentId); 
+                        }
+
+                        //remove records from salary payment
+                        this.salaryPaymentsTableAdapter.DeleteByEmployeeId(employeesRow.EmployeeId);
+
+                        //remove employee record from binding source
+                        employeesRow.Delete();
+
+                        //update into the database
+                        this.employeesTableAdapter.Update(this.employeeSalaryMGDataSet.Employees); 
+                    }
+                }
             }
         }
 

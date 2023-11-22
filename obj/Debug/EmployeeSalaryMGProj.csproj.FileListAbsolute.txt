@@ -16,3 +16,4 @@ D:\Target document\C# programming\Revision\EmployeeSalaryMGProj\obj\Debug\Employ
 D:\Target document\C# programming\Revision\EmployeeSalaryMGProj\obj\Debug\EmployeeSalaryMGProj.SalaryPayments.FrmChooseEmployeeToGetSlip.resources
 D:\Target document\C# programming\Revision\EmployeeSalaryMGProj\obj\Debug\EmployeeSalaryMGProj.SalaryPayments.FrmGenerateSlip.resources
 D:\Target document\C# programming\Revision\EmployeeSalaryMGProj\obj\Debug\EmployeeSalaryMGProj.SalaryPayments.UserControlSalaryGross.resources
+D:\Target document\C# programming\Revision\EmployeeSalaryMGProj\obj\Debug\EmployeeSalaryMGProj.Employees.FrmEmployeeDetail.resources
