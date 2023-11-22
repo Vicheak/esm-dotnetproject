@@ -31,10 +31,10 @@
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.cbDepartment = new System.Windows.Forms.ComboBox();
@@ -43,6 +43,18 @@
             this.departmentsTableAdapter = new EmployeeSalaryMGProj.EmployeeSalaryMGDataSetTableAdapters.DepartmentsTableAdapter();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.salaryPaymentIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.employeeIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.employeeNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.baseSalaryDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.benefitDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.deductionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.salaryDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.monthDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.yearDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.statusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.paymentDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.vSalaryPaymentDetailBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.employeesDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -56,20 +68,11 @@
             this.employeesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.employeesTableAdapter = new EmployeeSalaryMGProj.EmployeeSalaryMGDataSetTableAdapters.EmployeesTableAdapter();
             this.tableAdapterManager = new EmployeeSalaryMGProj.EmployeeSalaryMGDataSetTableAdapters.TableAdapterManager();
+            this.salaryPaymentsTableAdapter = new EmployeeSalaryMGProj.EmployeeSalaryMGDataSetTableAdapters.SalaryPaymentsTableAdapter();
             this.btnGenerateSlip = new System.Windows.Forms.Button();
             this.vSalaryPaymentDetailTableAdapter = new EmployeeSalaryMGProj.EmployeeSalaryMGDataSetTableAdapters.VSalaryPaymentDetailTableAdapter();
-            this.salaryPaymentIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.employeeIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.employeeNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.baseSalaryDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.benefitDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.deductionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.salaryDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.monthDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.yearDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.statusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.paymentDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnSetPaymentStatus = new System.Windows.Forms.Button();
+            this.btnCancelPaymentStatus = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.departmentsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.employeeSalaryMGDataSet)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
@@ -190,6 +193,114 @@
             this.dataGridView1.RowTemplate.Height = 40;
             this.dataGridView1.Size = new System.Drawing.Size(869, 468);
             this.dataGridView1.TabIndex = 2;
+            // 
+            // salaryPaymentIdDataGridViewTextBoxColumn
+            // 
+            this.salaryPaymentIdDataGridViewTextBoxColumn.DataPropertyName = "SalaryPaymentId";
+            this.salaryPaymentIdDataGridViewTextBoxColumn.HeaderText = "SalaryPaymentId";
+            this.salaryPaymentIdDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.salaryPaymentIdDataGridViewTextBoxColumn.Name = "salaryPaymentIdDataGridViewTextBoxColumn";
+            this.salaryPaymentIdDataGridViewTextBoxColumn.ReadOnly = true;
+            this.salaryPaymentIdDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // employeeIdDataGridViewTextBoxColumn
+            // 
+            this.employeeIdDataGridViewTextBoxColumn.DataPropertyName = "EmployeeId";
+            this.employeeIdDataGridViewTextBoxColumn.HeaderText = "EmployeeId";
+            this.employeeIdDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.employeeIdDataGridViewTextBoxColumn.Name = "employeeIdDataGridViewTextBoxColumn";
+            this.employeeIdDataGridViewTextBoxColumn.ReadOnly = true;
+            this.employeeIdDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // employeeNameDataGridViewTextBoxColumn
+            // 
+            this.employeeNameDataGridViewTextBoxColumn.DataPropertyName = "EmployeeName";
+            this.employeeNameDataGridViewTextBoxColumn.HeaderText = "ឈ្នោះបុគ្គលិក";
+            this.employeeNameDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.employeeNameDataGridViewTextBoxColumn.Name = "employeeNameDataGridViewTextBoxColumn";
+            this.employeeNameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // dateDataGridViewTextBoxColumn
+            // 
+            this.dateDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dateDataGridViewTextBoxColumn.DataPropertyName = "Date";
+            this.dateDataGridViewTextBoxColumn.HeaderText = "កាលបរិច្ឆេទចេញប័ណ្ណ";
+            this.dateDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.dateDataGridViewTextBoxColumn.Name = "dateDataGridViewTextBoxColumn";
+            this.dateDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // baseSalaryDataGridViewTextBoxColumn
+            // 
+            this.baseSalaryDataGridViewTextBoxColumn.DataPropertyName = "BaseSalary";
+            this.baseSalaryDataGridViewTextBoxColumn.HeaderText = "BaseSalary";
+            this.baseSalaryDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.baseSalaryDataGridViewTextBoxColumn.Name = "baseSalaryDataGridViewTextBoxColumn";
+            this.baseSalaryDataGridViewTextBoxColumn.ReadOnly = true;
+            this.baseSalaryDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // benefitDataGridViewTextBoxColumn
+            // 
+            this.benefitDataGridViewTextBoxColumn.DataPropertyName = "Benefit";
+            this.benefitDataGridViewTextBoxColumn.HeaderText = "Benefit";
+            this.benefitDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.benefitDataGridViewTextBoxColumn.Name = "benefitDataGridViewTextBoxColumn";
+            this.benefitDataGridViewTextBoxColumn.ReadOnly = true;
+            this.benefitDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // deductionDataGridViewTextBoxColumn
+            // 
+            this.deductionDataGridViewTextBoxColumn.DataPropertyName = "Deduction";
+            this.deductionDataGridViewTextBoxColumn.HeaderText = "Deduction";
+            this.deductionDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.deductionDataGridViewTextBoxColumn.Name = "deductionDataGridViewTextBoxColumn";
+            this.deductionDataGridViewTextBoxColumn.ReadOnly = true;
+            this.deductionDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // salaryDataGridViewTextBoxColumn
+            // 
+            this.salaryDataGridViewTextBoxColumn.DataPropertyName = "Salary";
+            dataGridViewCellStyle3.Format = "C4";
+            dataGridViewCellStyle3.NullValue = null;
+            this.salaryDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle3;
+            this.salaryDataGridViewTextBoxColumn.HeaderText = "ប្រាក់បំណាច់ខែ";
+            this.salaryDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.salaryDataGridViewTextBoxColumn.Name = "salaryDataGridViewTextBoxColumn";
+            this.salaryDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // monthDataGridViewTextBoxColumn
+            // 
+            this.monthDataGridViewTextBoxColumn.DataPropertyName = "Month";
+            this.monthDataGridViewTextBoxColumn.HeaderText = "Month";
+            this.monthDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.monthDataGridViewTextBoxColumn.Name = "monthDataGridViewTextBoxColumn";
+            this.monthDataGridViewTextBoxColumn.ReadOnly = true;
+            this.monthDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // yearDataGridViewTextBoxColumn
+            // 
+            this.yearDataGridViewTextBoxColumn.DataPropertyName = "Year";
+            this.yearDataGridViewTextBoxColumn.HeaderText = "Year";
+            this.yearDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.yearDataGridViewTextBoxColumn.Name = "yearDataGridViewTextBoxColumn";
+            this.yearDataGridViewTextBoxColumn.ReadOnly = true;
+            this.yearDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // statusDataGridViewTextBoxColumn
+            // 
+            this.statusDataGridViewTextBoxColumn.DataPropertyName = "Status";
+            this.statusDataGridViewTextBoxColumn.HeaderText = "ស្ថានភាព";
+            this.statusDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.statusDataGridViewTextBoxColumn.Name = "statusDataGridViewTextBoxColumn";
+            this.statusDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // paymentDateDataGridViewTextBoxColumn
+            // 
+            this.paymentDateDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.paymentDateDataGridViewTextBoxColumn.DataPropertyName = "PaymentDate";
+            this.paymentDateDataGridViewTextBoxColumn.HeaderText = "ក.បបង់";
+            this.paymentDateDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.paymentDateDataGridViewTextBoxColumn.Name = "paymentDateDataGridViewTextBoxColumn";
+            this.paymentDateDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // vSalaryPaymentDetailBindingSource
             // 
@@ -335,9 +446,13 @@
             this.tableAdapterManager.PaymentStatesTableAdapter = null;
             this.tableAdapterManager.RolesTableAdapter = null;
             this.tableAdapterManager.SalaryPaymentGrossTableAdapter = null;
-            this.tableAdapterManager.SalaryPaymentsTableAdapter = null;
+            this.tableAdapterManager.SalaryPaymentsTableAdapter = this.salaryPaymentsTableAdapter;
             this.tableAdapterManager.UpdateOrder = EmployeeSalaryMGProj.EmployeeSalaryMGDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             this.tableAdapterManager.UsersTableAdapter = null;
+            // 
+            // salaryPaymentsTableAdapter
+            // 
+            this.salaryPaymentsTableAdapter.ClearBeforeFill = true;
             // 
             // btnGenerateSlip
             // 
@@ -358,118 +473,42 @@
             // 
             this.vSalaryPaymentDetailTableAdapter.ClearBeforeFill = true;
             // 
-            // salaryPaymentIdDataGridViewTextBoxColumn
+            // btnSetPaymentStatus
             // 
-            this.salaryPaymentIdDataGridViewTextBoxColumn.DataPropertyName = "SalaryPaymentId";
-            this.salaryPaymentIdDataGridViewTextBoxColumn.HeaderText = "SalaryPaymentId";
-            this.salaryPaymentIdDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.salaryPaymentIdDataGridViewTextBoxColumn.Name = "salaryPaymentIdDataGridViewTextBoxColumn";
-            this.salaryPaymentIdDataGridViewTextBoxColumn.ReadOnly = true;
-            this.salaryPaymentIdDataGridViewTextBoxColumn.Visible = false;
+            this.btnSetPaymentStatus.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btnSetPaymentStatus.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSetPaymentStatus.FlatAppearance.BorderSize = 0;
+            this.btnSetPaymentStatus.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnSetPaymentStatus.ForeColor = System.Drawing.Color.White;
+            this.btnSetPaymentStatus.Location = new System.Drawing.Point(1171, 120);
+            this.btnSetPaymentStatus.Name = "btnSetPaymentStatus";
+            this.btnSetPaymentStatus.Size = new System.Drawing.Size(120, 41);
+            this.btnSetPaymentStatus.TabIndex = 14;
+            this.btnSetPaymentStatus.Text = "បើកប្រាក់ខែ";
+            this.btnSetPaymentStatus.UseVisualStyleBackColor = false;
+            this.btnSetPaymentStatus.Click += new System.EventHandler(this.btnSetPaymentStatus_Click);
             // 
-            // employeeIdDataGridViewTextBoxColumn
+            // btnCancelPaymentStatus
             // 
-            this.employeeIdDataGridViewTextBoxColumn.DataPropertyName = "EmployeeId";
-            this.employeeIdDataGridViewTextBoxColumn.HeaderText = "EmployeeId";
-            this.employeeIdDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.employeeIdDataGridViewTextBoxColumn.Name = "employeeIdDataGridViewTextBoxColumn";
-            this.employeeIdDataGridViewTextBoxColumn.ReadOnly = true;
-            this.employeeIdDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // employeeNameDataGridViewTextBoxColumn
-            // 
-            this.employeeNameDataGridViewTextBoxColumn.DataPropertyName = "EmployeeName";
-            this.employeeNameDataGridViewTextBoxColumn.HeaderText = "ឈ្នោះបុគ្គលិក";
-            this.employeeNameDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.employeeNameDataGridViewTextBoxColumn.Name = "employeeNameDataGridViewTextBoxColumn";
-            this.employeeNameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // dateDataGridViewTextBoxColumn
-            // 
-            this.dateDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dateDataGridViewTextBoxColumn.DataPropertyName = "Date";
-            this.dateDataGridViewTextBoxColumn.HeaderText = "កាលបរិច្ឆេទចេញប័ណ្ណ";
-            this.dateDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.dateDataGridViewTextBoxColumn.Name = "dateDataGridViewTextBoxColumn";
-            this.dateDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // baseSalaryDataGridViewTextBoxColumn
-            // 
-            this.baseSalaryDataGridViewTextBoxColumn.DataPropertyName = "BaseSalary";
-            this.baseSalaryDataGridViewTextBoxColumn.HeaderText = "BaseSalary";
-            this.baseSalaryDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.baseSalaryDataGridViewTextBoxColumn.Name = "baseSalaryDataGridViewTextBoxColumn";
-            this.baseSalaryDataGridViewTextBoxColumn.ReadOnly = true;
-            this.baseSalaryDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // benefitDataGridViewTextBoxColumn
-            // 
-            this.benefitDataGridViewTextBoxColumn.DataPropertyName = "Benefit";
-            this.benefitDataGridViewTextBoxColumn.HeaderText = "Benefit";
-            this.benefitDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.benefitDataGridViewTextBoxColumn.Name = "benefitDataGridViewTextBoxColumn";
-            this.benefitDataGridViewTextBoxColumn.ReadOnly = true;
-            this.benefitDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // deductionDataGridViewTextBoxColumn
-            // 
-            this.deductionDataGridViewTextBoxColumn.DataPropertyName = "Deduction";
-            this.deductionDataGridViewTextBoxColumn.HeaderText = "Deduction";
-            this.deductionDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.deductionDataGridViewTextBoxColumn.Name = "deductionDataGridViewTextBoxColumn";
-            this.deductionDataGridViewTextBoxColumn.ReadOnly = true;
-            this.deductionDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // salaryDataGridViewTextBoxColumn
-            // 
-            this.salaryDataGridViewTextBoxColumn.DataPropertyName = "Salary";
-            dataGridViewCellStyle3.Format = "C4";
-            dataGridViewCellStyle3.NullValue = null;
-            this.salaryDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle3;
-            this.salaryDataGridViewTextBoxColumn.HeaderText = "ប្រាក់បំណាច់ខែ";
-            this.salaryDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.salaryDataGridViewTextBoxColumn.Name = "salaryDataGridViewTextBoxColumn";
-            this.salaryDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // monthDataGridViewTextBoxColumn
-            // 
-            this.monthDataGridViewTextBoxColumn.DataPropertyName = "Month";
-            this.monthDataGridViewTextBoxColumn.HeaderText = "Month";
-            this.monthDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.monthDataGridViewTextBoxColumn.Name = "monthDataGridViewTextBoxColumn";
-            this.monthDataGridViewTextBoxColumn.ReadOnly = true;
-            this.monthDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // yearDataGridViewTextBoxColumn
-            // 
-            this.yearDataGridViewTextBoxColumn.DataPropertyName = "Year";
-            this.yearDataGridViewTextBoxColumn.HeaderText = "Year";
-            this.yearDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.yearDataGridViewTextBoxColumn.Name = "yearDataGridViewTextBoxColumn";
-            this.yearDataGridViewTextBoxColumn.ReadOnly = true;
-            this.yearDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // statusDataGridViewTextBoxColumn
-            // 
-            this.statusDataGridViewTextBoxColumn.DataPropertyName = "Status";
-            this.statusDataGridViewTextBoxColumn.HeaderText = "ស្ថានភាព";
-            this.statusDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.statusDataGridViewTextBoxColumn.Name = "statusDataGridViewTextBoxColumn";
-            this.statusDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // paymentDateDataGridViewTextBoxColumn
-            // 
-            this.paymentDateDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.paymentDateDataGridViewTextBoxColumn.DataPropertyName = "PaymentDate";
-            this.paymentDateDataGridViewTextBoxColumn.HeaderText = "ក.បបង់";
-            this.paymentDateDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.paymentDateDataGridViewTextBoxColumn.Name = "paymentDateDataGridViewTextBoxColumn";
-            this.paymentDateDataGridViewTextBoxColumn.ReadOnly = true;
+            this.btnCancelPaymentStatus.BackColor = System.Drawing.Color.Red;
+            this.btnCancelPaymentStatus.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCancelPaymentStatus.FlatAppearance.BorderSize = 0;
+            this.btnCancelPaymentStatus.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnCancelPaymentStatus.ForeColor = System.Drawing.Color.White;
+            this.btnCancelPaymentStatus.Location = new System.Drawing.Point(1045, 120);
+            this.btnCancelPaymentStatus.Name = "btnCancelPaymentStatus";
+            this.btnCancelPaymentStatus.Size = new System.Drawing.Size(120, 41);
+            this.btnCancelPaymentStatus.TabIndex = 14;
+            this.btnCancelPaymentStatus.Text = "ត្រឡប់";
+            this.btnCancelPaymentStatus.UseVisualStyleBackColor = false;
+            this.btnCancelPaymentStatus.Click += new System.EventHandler(this.btnCancelPaymentStatus_Click);
             // 
             // FrmChooseEmployeeToGetSlip
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(1482, 653);
+            this.Controls.Add(this.btnCancelPaymentStatus);
+            this.Controls.Add(this.btnSetPaymentStatus);
             this.Controls.Add(this.btnGenerateSlip);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.cbDepartment);
@@ -532,5 +571,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn yearDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn statusDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn paymentDateDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Button btnSetPaymentStatus;
+        private System.Windows.Forms.Button btnCancelPaymentStatus;
+        private EmployeeSalaryMGDataSetTableAdapters.SalaryPaymentsTableAdapter salaryPaymentsTableAdapter;
     }
 }
