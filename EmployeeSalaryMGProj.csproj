@@ -46,6 +46,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EmployeeSalaryMGDataSet.cs">
+      <DependentUpon>EmployeeSalaryMGDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="EmployeeSalaryMGDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -68,6 +71,12 @@
     </Compile>
     <Compile Include="Employees\FrmEmployee.Designer.cs">
       <DependentUpon>FrmEmployee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Employees\FrmEmployeeDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Employees\FrmEmployeeDetail.Designer.cs">
+      <DependentUpon>FrmEmployeeDetail.cs</DependentUpon>
     </Compile>
     <Compile Include="Employees\FrmUpdateBaseSalary.cs">
       <SubType>Form</SubType>
@@ -110,6 +119,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Employees\FrmEmployee.resx">
       <DependentUpon>FrmEmployee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Employees\FrmEmployeeDetail.resx">
+      <DependentUpon>FrmEmployeeDetail.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Employees\FrmUpdateBaseSalary.resx">
       <DependentUpon>FrmUpdateBaseSalary.cs</DependentUpon>

@@ -22,7 +22,10 @@ namespace EmployeeSalaryMGProj.SalaryPayments
             FillDepartment();
 
             //load all row from view salary payment detail
-            this.vSalaryPaymentDetailTableAdapter.Fill(this.employeeSalaryMGDataSet.VSalaryPaymentDetail);
+            //this.vSalaryPaymentDetailTableAdapter.Fill(this.employeeSalaryMGDataSet.VSalaryPaymentDetail);
+
+            //load top five record from view object
+            this.vSalaryPaymentDetailTableAdapter.FillByTopFiveRecord(this.employeeSalaryMGDataSet.VSalaryPaymentDetail);
         }
 
         private void FillDepartment()
@@ -195,6 +198,69 @@ namespace EmployeeSalaryMGProj.SalaryPayments
             catch (NullReferenceException ex)
             {
                 return null;
+            }
+        }
+
+        private void vSalaryPaymentDetaildataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            //Column Index = 12 (for any row index except row index = -1)
+            if (e.RowIndex == -1) return;
+            if (e.ColumnIndex == 12)
+            {
+                var salaryPaymentDetailRow = GetCurrentVSalaryPaymentDetailRow();
+
+                string message = $"Are you sure to remove payment record from employee {salaryPaymentDetailRow.EmployeeName}?";
+
+                var resultDialog = MessageBox.Show(message, "Confirmation",
+                    MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+
+                if (resultDialog == DialogResult.OK)
+                {
+                    //delete from bridge entity
+                    this.salaryPaymentGrossTableAdapter.DeleteBySalaryPaymentId(salaryPaymentDetailRow.SalaryPaymentId);
+
+                    //delete selected row from salary payment table (selected view row)
+                    this.salaryPaymentsTableAdapter.DeleteBySalaryPaymentId(salaryPaymentDetailRow.SalaryPaymentId);
+
+                    //refresh the view
+                    //this.vSalaryPaymentDetailTableAdapter.Fill(this.employeeSalaryMGDataSet.VSalaryPaymentDetail);
+
+                    //refresh the view by employee id 
+                    this.vSalaryPaymentDetailTableAdapter.FillByEmployeeId(this.employeeSalaryMGDataSet.VSalaryPaymentDetail,
+                        salaryPaymentDetailRow.EmployeeId);
+                }
+            }
+        }
+
+        private void employeesDataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            var currentEmployeeRow = GetCurrentEmployee(); 
+
+            if(currentEmployeeRow == null)
+            {
+                MessageBox.Show("Employee record is empty!", "Error",
+                       MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            //filter view salary payment detail by employee id
+            this.vSalaryPaymentDetailTableAdapter.FillByEmployeeId(this.employeeSalaryMGDataSet.VSalaryPaymentDetail,
+                currentEmployeeRow.EmployeeId); 
+        }
+
+        private void vSalaryPaymentDetaildataGridView_Paint(object sender, PaintEventArgs e)
+        {
+            if (vSalaryPaymentDetaildataGridView.Rows.Count == 0)
+            {
+                TextRenderer.DrawText(
+                    e.Graphics,
+                    "គ្មានប្រវត្តិបើកប្រាក់ខែ",
+                    vSalaryPaymentDetaildataGridView.Font,
+                    vSalaryPaymentDetaildataGridView.ClientRectangle,
+                    vSalaryPaymentDetaildataGridView.ForeColor,
+                    vSalaryPaymentDetaildataGridView.BackgroundColor,
+                    TextFormatFlags.HorizontalCenter | TextFormatFlags.VerticalCenter
+                );
             }
         }
     }

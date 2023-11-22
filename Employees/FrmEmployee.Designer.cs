@@ -45,15 +45,20 @@
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.DataGridViewImageColumnEdit = new System.Windows.Forms.DataGridViewImageColumn();
+            this.DataGridViewImageColumnDetail = new System.Windows.Forms.DataGridViewImageColumn();
+            this.DataGridViewImageColumnDelete = new System.Windows.Forms.DataGridViewImageColumn();
             this.employeesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.employeeSalaryMGDataSet = new EmployeeSalaryMGProj.EmployeeSalaryMGDataSet();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.btnSearch = new System.Windows.Forms.Button();
             this.btnPrint = new System.Windows.Forms.Button();
             this.btnAddNew = new System.Windows.Forms.Button();
+            this.btnRefresh = new System.Windows.Forms.Button();
             this.employeesTableAdapter = new EmployeeSalaryMGProj.EmployeeSalaryMGDataSetTableAdapters.EmployeesTableAdapter();
             this.tableAdapterManager = new EmployeeSalaryMGProj.EmployeeSalaryMGDataSetTableAdapters.TableAdapterManager();
-            this.btnRefresh = new System.Windows.Forms.Button();
+            this.baseSalaryLogsTableAdapter = new EmployeeSalaryMGProj.EmployeeSalaryMGDataSetTableAdapters.BaseSalaryLogsTableAdapter();
+            this.salaryPaymentGrossTableAdapter = new EmployeeSalaryMGProj.EmployeeSalaryMGDataSetTableAdapters.SalaryPaymentGrossTableAdapter();
+            this.salaryPaymentsTableAdapter = new EmployeeSalaryMGProj.EmployeeSalaryMGDataSetTableAdapters.SalaryPaymentsTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.employeesDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.employeesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.employeeSalaryMGDataSet)).BeginInit();
@@ -91,11 +96,14 @@
             this.dataGridViewTextBoxColumn6,
             this.dataGridViewTextBoxColumn7,
             this.dataGridViewCheckBoxColumn1,
-            this.DataGridViewImageColumnEdit});
+            this.DataGridViewImageColumnEdit,
+            this.DataGridViewImageColumnDetail,
+            this.DataGridViewImageColumnDelete});
             this.employeesDataGridView.DataSource = this.employeesBindingSource;
             this.employeesDataGridView.EnableHeadersVisualStyles = false;
             this.employeesDataGridView.Location = new System.Drawing.Point(12, 60);
             this.employeesDataGridView.Name = "employeesDataGridView";
+            this.employeesDataGridView.ReadOnly = true;
             this.employeesDataGridView.RowHeadersVisible = false;
             this.employeesDataGridView.RowHeadersWidth = 51;
             this.employeesDataGridView.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
@@ -122,6 +130,7 @@
             this.dataGridViewTextBoxColumn2.HeaderText = "នាមត្រកូល";
             this.dataGridViewTextBoxColumn2.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn3
             // 
@@ -130,6 +139,7 @@
             this.dataGridViewTextBoxColumn3.HeaderText = "នាមខ្លួន";
             this.dataGridViewTextBoxColumn3.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn4
             // 
@@ -138,6 +148,7 @@
             this.dataGridViewTextBoxColumn4.HeaderText = "ភេទ";
             this.dataGridViewTextBoxColumn4.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn5
             // 
@@ -149,6 +160,7 @@
             this.dataGridViewTextBoxColumn5.HeaderText = "ថ្ងៃខែឆ្នាំកំណើត";
             this.dataGridViewTextBoxColumn5.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn6
             // 
@@ -160,6 +172,7 @@
             this.dataGridViewTextBoxColumn6.HeaderText = "ប្រាក់ខែគោល";
             this.dataGridViewTextBoxColumn6.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn7
             // 
@@ -167,6 +180,7 @@
             this.dataGridViewTextBoxColumn7.HeaderText = "DepartmentId";
             this.dataGridViewTextBoxColumn7.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.dataGridViewTextBoxColumn7.ReadOnly = true;
             this.dataGridViewTextBoxColumn7.Visible = false;
             this.dataGridViewTextBoxColumn7.Width = 125;
             // 
@@ -176,11 +190,13 @@
             this.dataGridViewCheckBoxColumn1.HeaderText = "Active";
             this.dataGridViewCheckBoxColumn1.MinimumWidth = 6;
             this.dataGridViewCheckBoxColumn1.Name = "dataGridViewCheckBoxColumn1";
+            this.dataGridViewCheckBoxColumn1.ReadOnly = true;
             this.dataGridViewCheckBoxColumn1.Visible = false;
             this.dataGridViewCheckBoxColumn1.Width = 125;
             // 
             // DataGridViewImageColumnEdit
             // 
+            this.DataGridViewImageColumnEdit.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle5.NullValue = ((object)(resources.GetObject("dataGridViewCellStyle5.NullValue")));
@@ -189,7 +205,28 @@
             this.DataGridViewImageColumnEdit.Image = global::EmployeeSalaryMGProj.Properties.Resources.icons8_edit_16px;
             this.DataGridViewImageColumnEdit.MinimumWidth = 6;
             this.DataGridViewImageColumnEdit.Name = "DataGridViewImageColumnEdit";
-            this.DataGridViewImageColumnEdit.Width = 125;
+            this.DataGridViewImageColumnEdit.ReadOnly = true;
+            this.DataGridViewImageColumnEdit.Width = 59;
+            // 
+            // DataGridViewImageColumnDetail
+            // 
+            this.DataGridViewImageColumnDetail.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.DataGridViewImageColumnDetail.HeaderText = "លម្អិត";
+            this.DataGridViewImageColumnDetail.Image = global::EmployeeSalaryMGProj.Properties.Resources.icons8_view_details_16px_1;
+            this.DataGridViewImageColumnDetail.MinimumWidth = 6;
+            this.DataGridViewImageColumnDetail.Name = "DataGridViewImageColumnDetail";
+            this.DataGridViewImageColumnDetail.ReadOnly = true;
+            this.DataGridViewImageColumnDetail.Width = 61;
+            // 
+            // DataGridViewImageColumnDelete
+            // 
+            this.DataGridViewImageColumnDelete.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.DataGridViewImageColumnDelete.HeaderText = "លុប";
+            this.DataGridViewImageColumnDelete.Image = global::EmployeeSalaryMGProj.Properties.Resources.icons8_trash_can_16px;
+            this.DataGridViewImageColumnDelete.MinimumWidth = 6;
+            this.DataGridViewImageColumnDelete.Name = "DataGridViewImageColumnDelete";
+            this.DataGridViewImageColumnDelete.ReadOnly = true;
+            this.DataGridViewImageColumnDelete.Width = 49;
             // 
             // employeesBindingSource
             // 
@@ -255,25 +292,6 @@
             this.btnAddNew.UseVisualStyleBackColor = true;
             this.btnAddNew.Click += new System.EventHandler(this.btnAddNew_Click);
             // 
-            // employeesTableAdapter
-            // 
-            this.employeesTableAdapter.ClearBeforeFill = true;
-            // 
-            // tableAdapterManager
-            // 
-            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.BaseSalaryLogsTableAdapter = null;
-            this.tableAdapterManager.DepartmentsTableAdapter = null;
-            this.tableAdapterManager.EmployeesTableAdapter = this.employeesTableAdapter;
-            this.tableAdapterManager.GrossSalariesTableAdapter = null;
-            this.tableAdapterManager.GrossTypesTableAdapter = null;
-            this.tableAdapterManager.PaymentStatesTableAdapter = null;
-            this.tableAdapterManager.RolesTableAdapter = null;
-            this.tableAdapterManager.SalaryPaymentGrossTableAdapter = null;
-            this.tableAdapterManager.SalaryPaymentsTableAdapter = null;
-            this.tableAdapterManager.UpdateOrder = EmployeeSalaryMGProj.EmployeeSalaryMGDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
-            this.tableAdapterManager.UsersTableAdapter = null;
-            // 
             // btnRefresh
             // 
             this.btnRefresh.BackColor = System.Drawing.Color.Navy;
@@ -287,6 +305,38 @@
             this.btnRefresh.TabIndex = 2;
             this.btnRefresh.UseVisualStyleBackColor = false;
             this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
+            // 
+            // employeesTableAdapter
+            // 
+            this.employeesTableAdapter.ClearBeforeFill = true;
+            // 
+            // tableAdapterManager
+            // 
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.BaseSalaryLogsTableAdapter = this.baseSalaryLogsTableAdapter;
+            this.tableAdapterManager.DepartmentsTableAdapter = null;
+            this.tableAdapterManager.EmployeesTableAdapter = this.employeesTableAdapter;
+            this.tableAdapterManager.GrossSalariesTableAdapter = null;
+            this.tableAdapterManager.GrossTypesTableAdapter = null;
+            this.tableAdapterManager.MonthsTableAdapter = null;
+            this.tableAdapterManager.PaymentStatesTableAdapter = null;
+            this.tableAdapterManager.RolesTableAdapter = null;
+            this.tableAdapterManager.SalaryPaymentGrossTableAdapter = this.salaryPaymentGrossTableAdapter;
+            this.tableAdapterManager.SalaryPaymentsTableAdapter = this.salaryPaymentsTableAdapter;
+            this.tableAdapterManager.UpdateOrder = EmployeeSalaryMGProj.EmployeeSalaryMGDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            this.tableAdapterManager.UsersTableAdapter = null;
+            // 
+            // baseSalaryLogsTableAdapter
+            // 
+            this.baseSalaryLogsTableAdapter.ClearBeforeFill = true;
+            // 
+            // salaryPaymentGrossTableAdapter
+            // 
+            this.salaryPaymentGrossTableAdapter.ClearBeforeFill = true;
+            // 
+            // salaryPaymentsTableAdapter
+            // 
+            this.salaryPaymentsTableAdapter.ClearBeforeFill = true;
             // 
             // FrmEmployee
             // 
@@ -323,6 +373,7 @@
         private System.Windows.Forms.Button btnPrint;
         private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.Button btnSearch;
+        private System.Windows.Forms.Button btnRefresh;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
@@ -332,6 +383,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
         private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn1;
         private System.Windows.Forms.DataGridViewImageColumn DataGridViewImageColumnEdit;
-        private System.Windows.Forms.Button btnRefresh;
+        private System.Windows.Forms.DataGridViewImageColumn DataGridViewImageColumnDetail;
+        private System.Windows.Forms.DataGridViewImageColumn DataGridViewImageColumnDelete;
+        private EmployeeSalaryMGDataSetTableAdapters.BaseSalaryLogsTableAdapter baseSalaryLogsTableAdapter;
+        private EmployeeSalaryMGDataSetTableAdapters.SalaryPaymentsTableAdapter salaryPaymentsTableAdapter;
+        private EmployeeSalaryMGDataSetTableAdapters.SalaryPaymentGrossTableAdapter salaryPaymentGrossTableAdapter;
     }
 }
