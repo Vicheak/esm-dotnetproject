@@ -137,6 +137,9 @@
             // 
             // tableLayoutPanel1
             // 
+            this.tableLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel1.ColumnCount = 2;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 60F));
@@ -499,6 +502,7 @@
             // 
             // btnSetPaymentStatus
             // 
+            this.btnSetPaymentStatus.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSetPaymentStatus.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.btnSetPaymentStatus.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSetPaymentStatus.FlatAppearance.BorderSize = 0;
@@ -515,6 +519,7 @@
             // 
             // btnCancelPaymentStatus
             // 
+            this.btnCancelPaymentStatus.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCancelPaymentStatus.BackColor = System.Drawing.Color.Red;
             this.btnCancelPaymentStatus.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCancelPaymentStatus.FlatAppearance.BorderSize = 0;
