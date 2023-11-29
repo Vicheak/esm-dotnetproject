@@ -31,7 +31,8 @@ namespace EmployeeSalaryMGProj.SalaryPayments
 
         private void FrmGenerateSlip_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'employeeSalaryMGDataSet.Months' table. You can move, or remove it, as needed.
+            this.TopMost = true; 
+
             this.monthsTableAdapter.Fill(this.employeeSalaryMGDataSet.Months);
             if (employeesRow == null)
             {

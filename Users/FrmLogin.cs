@@ -57,7 +57,7 @@ namespace EmployeeSalaryMGProj.Users
             }
         }
 
-        private bool isShowPassword; 
+        private bool isShowPassword;
 
         private void btnShowPassword_Click(object sender, EventArgs e)
         {
@@ -69,7 +69,7 @@ namespace EmployeeSalaryMGProj.Users
                 passwordTextBox.Size = new Size(293, 33);
                 isShowPassword = false;
 
-                btnShowPassword.Image = Properties.Resources.icons8_hide_16px; 
+                btnShowPassword.Image = Properties.Resources.icons8_hide_16px;
             }
             else
             {
@@ -79,7 +79,7 @@ namespace EmployeeSalaryMGProj.Users
                 passwordTextBox.Size = new Size(293, 33);
                 isShowPassword = true;
 
-                btnShowPassword.Image = Properties.Resources.icons8_eye_16px; 
+                btnShowPassword.Image = Properties.Resources.icons8_eye_16px;
             }
         }
 

@@ -25,7 +25,9 @@ namespace EmployeeSalaryMGProj
         }
 
         private void FrmAddOrModifyEmployee_Load(object sender, EventArgs e)
-        { 
+        {
+            this.TopMost = true; 
+
             this.departmentsTableAdapter.Fill(this.employeeSalaryMGDataSet.Departments);
 
             if (isAdded)

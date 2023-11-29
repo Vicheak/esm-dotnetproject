@@ -120,10 +120,19 @@ namespace EmployeeSalaryMGProj.Users
                     var userRow = currentRow.Row as EmployeeSalaryMGDataSet.UsersRow;
 
                     var result = MessageBox.Show($"Are you sure to remove user with username {userRow.Username}?", "Confirmation",
-                        MessageBoxButtons.OKCancel, MessageBoxIcon.Question); 
+                        MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
 
                     if (result == DialogResult.OK)
                     {
+                        //validate two default users before delete from the database (admin, accountant)
+                        if (userRow.Username.Equals("admin", StringComparison.OrdinalIgnoreCase) || 
+                            userRow.Username.Equals("accountant", StringComparison.OrdinalIgnoreCase))
+                        {
+                            MessageBox.Show("This user must not be allowed to remove! please consider another user!", "Error",
+                                MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            return; 
+                        }
+
                         this.usersBindingSource.RemoveCurrent(); 
                         this.usersBindingSource.EndEdit();
 

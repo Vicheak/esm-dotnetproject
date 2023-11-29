@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmHome));
-            this.label1 = new System.Windows.Forms.Label();
             this.mainFlowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.btnShowFrmEmployee = new System.Windows.Forms.Button();
             this.btnShowFrmAddNewEmployee = new System.Windows.Forms.Button();
@@ -39,24 +38,13 @@
             this.btnShowFrmUser = new System.Windows.Forms.Button();
             this.btnCloseApp = new System.Windows.Forms.Button();
             this.mainPanel = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.btnGoNormalScreen = new System.Windows.Forms.Button();
+            this.lblAppHome = new System.Windows.Forms.Label();
+            this.btnCloseScreen = new System.Windows.Forms.Button();
+            this.btnGoFullScreen = new System.Windows.Forms.Button();
             this.mainFlowLayoutPanel.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // label1
-            // 
-            this.label1.BackColor = System.Drawing.Color.Navy;
-            this.label1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label1.Font = new System.Drawing.Font("Khmer M1", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Image = global::EmployeeSalaryMGProj.Properties.Resources.home_24px_Gray;
-            this.label1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label1.Location = new System.Drawing.Point(0, 0);
-            this.label1.Name = "label1";
-            this.label1.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
-            this.label1.Size = new System.Drawing.Size(1282, 60);
-            this.label1.TabIndex = 9;
-            this.label1.Text = "ប្រព័ន្ធគ្រប់គ្រងព័ត៌មានបុគ្គលិក";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // mainFlowLayoutPanel
             // 
@@ -223,13 +211,91 @@
             this.mainPanel.Size = new System.Drawing.Size(1011, 693);
             this.mainPanel.TabIndex = 11;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Navy;
+            this.label2.Font = new System.Drawing.Font("Khmer OS Siemreap", 8F);
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(58, 9);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(200, 25);
+            this.label2.TabIndex = 7;
+            this.label2.Text = "Created By S.Vicheak | V.0.0.1";
+            // 
+            // btnGoNormalScreen
+            // 
+            this.btnGoNormalScreen.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnGoNormalScreen.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnGoNormalScreen.FlatAppearance.BorderSize = 0;
+            this.btnGoNormalScreen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGoNormalScreen.Image = ((System.Drawing.Image)(resources.GetObject("btnGoNormalScreen.Image")));
+            this.btnGoNormalScreen.Location = new System.Drawing.Point(1192, 18);
+            this.btnGoNormalScreen.Name = "btnGoNormalScreen";
+            this.btnGoNormalScreen.Size = new System.Drawing.Size(23, 23);
+            this.btnGoNormalScreen.TabIndex = 12;
+            this.btnGoNormalScreen.TabStop = false;
+            this.btnGoNormalScreen.UseVisualStyleBackColor = true;
+            this.btnGoNormalScreen.Click += new System.EventHandler(this.btnGoNormalScreen_Click);
+            // 
+            // lblAppHome
+            // 
+            this.lblAppHome.BackColor = System.Drawing.Color.Navy;
+            this.lblAppHome.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lblAppHome.Font = new System.Drawing.Font("Khmer M1", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAppHome.ForeColor = System.Drawing.Color.White;
+            this.lblAppHome.Image = global::EmployeeSalaryMGProj.Properties.Resources.home_24px_Gray;
+            this.lblAppHome.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblAppHome.Location = new System.Drawing.Point(0, 0);
+            this.lblAppHome.Name = "lblAppHome";
+            this.lblAppHome.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.lblAppHome.Size = new System.Drawing.Size(1282, 60);
+            this.lblAppHome.TabIndex = 9;
+            this.lblAppHome.Text = "ប្រព័ន្ធគ្រប់គ្រងព័ត៌មានបុគ្គលិក";
+            this.lblAppHome.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblAppHome.Click += new System.EventHandler(this.lblAppHome_Click);
+            // 
+            // btnCloseScreen
+            // 
+            this.btnCloseScreen.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCloseScreen.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCloseScreen.FlatAppearance.BorderSize = 0;
+            this.btnCloseScreen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCloseScreen.Image = ((System.Drawing.Image)(resources.GetObject("btnCloseScreen.Image")));
+            this.btnCloseScreen.Location = new System.Drawing.Point(1234, 18);
+            this.btnCloseScreen.Name = "btnCloseScreen";
+            this.btnCloseScreen.Size = new System.Drawing.Size(23, 23);
+            this.btnCloseScreen.TabIndex = 8;
+            this.btnCloseScreen.TabStop = false;
+            this.btnCloseScreen.UseVisualStyleBackColor = true;
+            this.btnCloseScreen.Click += new System.EventHandler(this.btnCloseScreen_Click);
+            // 
+            // btnGoFullScreen
+            // 
+            this.btnGoFullScreen.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnGoFullScreen.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnGoFullScreen.FlatAppearance.BorderSize = 0;
+            this.btnGoFullScreen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGoFullScreen.Image = ((System.Drawing.Image)(resources.GetObject("btnGoFullScreen.Image")));
+            this.btnGoFullScreen.Location = new System.Drawing.Point(1234, 18);
+            this.btnGoFullScreen.Name = "btnGoFullScreen";
+            this.btnGoFullScreen.Size = new System.Drawing.Size(23, 23);
+            this.btnGoFullScreen.TabIndex = 13;
+            this.btnGoFullScreen.TabStop = false;
+            this.btnGoFullScreen.UseVisualStyleBackColor = true;
+            this.btnGoFullScreen.Click += new System.EventHandler(this.btnGoFullScreen_Click);
+            // 
             // FrmHome
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(1282, 753);
+            this.Controls.Add(this.btnGoFullScreen);
+            this.Controls.Add(this.btnCloseScreen);
+            this.Controls.Add(this.btnGoNormalScreen);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.mainPanel);
             this.Controls.Add(this.mainFlowLayoutPanel);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblAppHome);
             this.Font = new System.Drawing.Font("Khmer OS Siemreap", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "FrmHome";
@@ -238,12 +304,13 @@
             this.Load += new System.EventHandler(this.FrmHome_Load);
             this.mainFlowLayoutPanel.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblAppHome;
         private System.Windows.Forms.FlowLayoutPanel mainFlowLayoutPanel;
         private System.Windows.Forms.Button btnShowFrmAddNewEmployee;
         private System.Windows.Forms.Button btnShowFrmEmployee;
@@ -253,5 +320,9 @@
         private System.Windows.Forms.Panel mainPanel;
         private System.Windows.Forms.Button btnCloseApp;
         private System.Windows.Forms.Button btnShowFrmUser;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button btnGoNormalScreen;
+        private System.Windows.Forms.Button btnCloseScreen;
+        private System.Windows.Forms.Button btnGoFullScreen;
     }
 }
