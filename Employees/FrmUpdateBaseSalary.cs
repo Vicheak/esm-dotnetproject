@@ -37,6 +37,8 @@ namespace EmployeeSalaryMGProj
 
         private void FrmUpdateBaseSalary_Load(object sender, EventArgs e)
         {
+            this.TopMost = true; 
+
             baseSalaryLogsRow = this.employeeSalaryMGDataSet.BaseSalaryLogs.NewBaseSalaryLogsRow();
         }
 

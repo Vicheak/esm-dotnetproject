@@ -32,7 +32,6 @@
             System.Windows.Forms.Label usernameLabel;
             System.Windows.Forms.Label passwordLabel;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmLogin));
-            this.btnShowPassword = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
             this.btnLogin = new System.Windows.Forms.Button();
             this.usernameTextBox = new System.Windows.Forms.TextBox();
@@ -43,6 +42,7 @@
             this.usersTableAdapter = new EmployeeSalaryMGProj.EmployeeSalaryMGDataSetTableAdapters.UsersTableAdapter();
             this.tableAdapterManager = new EmployeeSalaryMGProj.EmployeeSalaryMGDataSetTableAdapters.TableAdapterManager();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnShowPassword = new System.Windows.Forms.Button();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             usernameLabel = new System.Windows.Forms.Label();
             passwordLabel = new System.Windows.Forms.Label();
@@ -68,21 +68,6 @@
             passwordLabel.Size = new System.Drawing.Size(185, 31);
             passwordLabel.TabIndex = 31;
             passwordLabel.Text = "សូមវាយលេខកូដសម្ងាត់៖";
-            // 
-            // btnShowPassword
-            // 
-            this.btnShowPassword.BackColor = System.Drawing.Color.White;
-            this.btnShowPassword.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnShowPassword.FlatAppearance.BorderSize = 0;
-            this.btnShowPassword.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnShowPassword.Image = global::EmployeeSalaryMGProj.Properties.Resources.icons8_hide_16px;
-            this.btnShowPassword.Location = new System.Drawing.Point(299, 246);
-            this.btnShowPassword.Name = "btnShowPassword";
-            this.btnShowPassword.Size = new System.Drawing.Size(32, 27);
-            this.btnShowPassword.TabIndex = 32;
-            this.btnShowPassword.TabStop = false;
-            this.btnShowPassword.UseVisualStyleBackColor = false;
-            this.btnShowPassword.Click += new System.EventHandler(this.btnShowPassword_Click);
             // 
             // btnClose
             // 
@@ -176,6 +161,7 @@
             this.panel1.BackColor = System.Drawing.Color.Transparent;
             this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.panel1.Controls.Add(this.btnShowPassword);
             this.panel1.Controls.Add(usernameLabel);
             this.panel1.Controls.Add(this.passwordTextBox);
             this.panel1.Controls.Add(passwordLabel);
@@ -187,6 +173,21 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(378, 366);
             this.panel1.TabIndex = 34;
+            // 
+            // btnShowPassword
+            // 
+            this.btnShowPassword.BackColor = System.Drawing.Color.White;
+            this.btnShowPassword.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnShowPassword.FlatAppearance.BorderSize = 0;
+            this.btnShowPassword.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnShowPassword.Image = ((System.Drawing.Image)(resources.GetObject("btnShowPassword.Image")));
+            this.btnShowPassword.Location = new System.Drawing.Point(305, 203);
+            this.btnShowPassword.Name = "btnShowPassword";
+            this.btnShowPassword.Size = new System.Drawing.Size(32, 27);
+            this.btnShowPassword.TabIndex = 32;
+            this.btnShowPassword.TabStop = false;
+            this.btnShowPassword.UseVisualStyleBackColor = false;
+            this.btnShowPassword.Click += new System.EventHandler(this.btnShowPassword_Click);
             // 
             // imageList1
             // 
@@ -200,7 +201,6 @@
             this.ClientSize = new System.Drawing.Size(378, 409);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.btnShowPassword);
             this.Font = new System.Drawing.Font("Khmer OS Siemreap", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
@@ -219,7 +219,6 @@
 
         #endregion
 
-        private System.Windows.Forms.Button btnShowPassword;
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Button btnLogin;
         public System.Windows.Forms.TextBox usernameTextBox;
@@ -231,5 +230,6 @@
         private EmployeeSalaryMGDataSetTableAdapters.TableAdapterManager tableAdapterManager;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.ImageList imageList1;
+        private System.Windows.Forms.Button btnShowPassword;
     }
 }

@@ -53,6 +53,14 @@ namespace EmployeeSalaryMGProj
                     btnShowFrmUser.Visible = false;
                 }
 
+                //load the control screen buttons
+                if (this.TopMost == false)
+                {
+                    btnGoFullScreen.Visible = true;
+                    btnGoNormalScreen.Visible = false;
+                    btnCloseScreen.Visible = false; 
+                }
+
                 //open the main form by auto clicked button
                 //btnShowFrmEmployee.PerformClick();
                 PopUpForm(new FrmEmployee() { usersRow = frmLogin.userRow });
@@ -127,6 +135,42 @@ namespace EmployeeSalaryMGProj
             frmUser = new Users.FrmUser();
 
             PopUpForm(frmUser);
+        }
+
+        private void btnCloseScreen_Click(object sender, EventArgs e)
+        {
+            this.Close(); 
+        }
+
+        private void btnGoNormalScreen_Click(object sender, EventArgs e)
+        {
+            //go normal screen 
+            this.TopMost = false; //no overlaping
+            this.FormBorderStyle = FormBorderStyle.FixedSingle;
+            this.WindowState = FormWindowState.Normal;
+
+            //control the visibility
+            btnGoFullScreen.Visible = true;
+            btnGoNormalScreen.Visible = false;
+            btnCloseScreen.Visible = false;
+        }
+
+        private void btnGoFullScreen_Click(object sender, EventArgs e)
+        {
+            //go full screen
+            this.TopMost = true; //overlap all forms
+            this.FormBorderStyle = FormBorderStyle.None;
+            this.WindowState = FormWindowState.Maximized;
+
+            //control the visibility
+            btnGoFullScreen.Visible = false;
+            btnGoNormalScreen.Visible = true;
+            btnCloseScreen.Visible = true;
+        }
+
+        private void lblAppHome_Click(object sender, EventArgs e)
+        {
+            btnShowFrmEmployee.PerformClick();    
         }
     }
 }
