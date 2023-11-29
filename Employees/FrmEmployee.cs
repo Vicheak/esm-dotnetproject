@@ -162,5 +162,12 @@ namespace EmployeeSalaryMGProj
                 );
             }
         }
+
+        private void btnPrint_Click(object sender, EventArgs e)
+        {
+            FrmPreviewEmployeeList frmPreviewEmployeeList = new FrmPreviewEmployeeList(); 
+            
+            frmPreviewEmployeeList.ShowDialog(); 
+        }
     }
 }

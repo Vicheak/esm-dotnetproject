@@ -263,5 +263,17 @@ namespace EmployeeSalaryMGProj.SalaryPayments
                 );
             }
         }
+
+        private void btnPrint_Click(object sender, EventArgs e)
+        {
+            var currentSalaryPaymentDetailRow = this.vSalaryPaymentDetailBindingSource.Current as DataRowView;
+            if (currentSalaryPaymentDetailRow == null) return; 
+            var vSalaryPaymentDetailRow = currentSalaryPaymentDetailRow.Row as EmployeeSalaryMGDataSet.VSalaryPaymentDetailRow;
+
+            FrmPreviewSalarySlip frmPreviewSalarySlip = new FrmPreviewSalarySlip();
+            frmPreviewSalarySlip.vSalaryPaymentDetailRow = vSalaryPaymentDetailRow; 
+
+            frmPreviewSalarySlip.ShowDialog();
+        }
     }
 }

@@ -75,5 +75,15 @@ namespace EmployeeSalaryMGProj.Employees
                 );
             }
         }
+
+        private void btnPrint_Click(object sender, EventArgs e)
+        {
+            FrmPreviewIndividualEmployee frmPreviewIndividualEmployee = new FrmPreviewIndividualEmployee();
+            frmPreviewIndividualEmployee.employeesRow = employeesRow; 
+            frmPreviewIndividualEmployee.baseSalaryLogsDataTable = this.employeeSalaryMGDataSet.BaseSalaryLogs;
+            frmPreviewIndividualEmployee.vSalaryPaymentDetailsDataTable = this.employeeSalaryMGDataSet.VSalaryPaymentDetail;
+
+            frmPreviewIndividualEmployee.ShowDialog();
+        }
     }
 }
