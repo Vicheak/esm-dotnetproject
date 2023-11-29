@@ -37,15 +37,16 @@
             System.Windows.Forms.Label baseSalaryLabel;
             System.Windows.Forms.Label departmentIdLabel;
             System.Windows.Forms.Label activeLabel;
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmEmployeeDetail));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.employeeIdTextBox = new System.Windows.Forms.TextBox();
             this.employeesBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -88,6 +89,7 @@
             this.departmentsTableAdapter = new EmployeeSalaryMGProj.EmployeeSalaryMGDataSetTableAdapters.DepartmentsTableAdapter();
             this.monthsTableAdapter = new EmployeeSalaryMGProj.EmployeeSalaryMGDataSetTableAdapters.MonthsTableAdapter();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.btnPrint = new System.Windows.Forms.Button();
             employeeIdLabel = new System.Windows.Forms.Label();
             firstNameLabel = new System.Windows.Forms.Label();
             lastNameLabel = new System.Windows.Forms.Label();
@@ -331,10 +333,10 @@
             this.baseSalaryLogDataGridView.AllowUserToDeleteRows = false;
             this.baseSalaryLogDataGridView.AllowUserToResizeColumns = false;
             this.baseSalaryLogDataGridView.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Navy;
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
-            this.baseSalaryLogDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.Navy;
+            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.White;
+            this.baseSalaryLogDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle10;
             this.baseSalaryLogDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -342,14 +344,14 @@
             this.baseSalaryLogDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.baseSalaryLogDataGridView.BackgroundColor = System.Drawing.Color.White;
             this.baseSalaryLogDataGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Navy;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Khmer OS Siemreap", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.baseSalaryLogDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.Navy;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Khmer OS Siemreap", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.baseSalaryLogDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
             this.baseSalaryLogDataGridView.ColumnHeadersHeight = 45;
             this.baseSalaryLogDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.baseSalaryLogDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -391,9 +393,9 @@
             // amountDataGridViewTextBoxColumn
             // 
             this.amountDataGridViewTextBoxColumn.DataPropertyName = "Amount";
-            dataGridViewCellStyle3.Format = "C4";
-            dataGridViewCellStyle3.NullValue = null;
-            this.amountDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle12.Format = "C4";
+            dataGridViewCellStyle12.NullValue = null;
+            this.amountDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle12;
             this.amountDataGridViewTextBoxColumn.HeaderText = "ចំនួនទឹកប្រាក់";
             this.amountDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.amountDataGridViewTextBoxColumn.Name = "amountDataGridViewTextBoxColumn";
@@ -442,10 +444,10 @@
             this.vSalaryPaymentDetailDataGridView.AllowUserToDeleteRows = false;
             this.vSalaryPaymentDetailDataGridView.AllowUserToResizeColumns = false;
             this.vSalaryPaymentDetailDataGridView.AllowUserToResizeRows = false;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.Navy;
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
-            this.vSalaryPaymentDetailDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle13.BackColor = System.Drawing.Color.Navy;
+            dataGridViewCellStyle13.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.Color.White;
+            this.vSalaryPaymentDetailDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle13;
             this.vSalaryPaymentDetailDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -453,14 +455,14 @@
             this.vSalaryPaymentDetailDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.vSalaryPaymentDetailDataGridView.BackgroundColor = System.Drawing.Color.White;
             this.vSalaryPaymentDetailDataGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.Navy;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Khmer OS Siemreap", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.vSalaryPaymentDetailDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle14.BackColor = System.Drawing.Color.Navy;
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("Khmer OS Siemreap", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle14.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.vSalaryPaymentDetailDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle14;
             this.vSalaryPaymentDetailDataGridView.ColumnHeadersHeight = 45;
             this.vSalaryPaymentDetailDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.vSalaryPaymentDetailDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -485,7 +487,7 @@
             this.vSalaryPaymentDetailDataGridView.RowHeadersWidth = 51;
             this.vSalaryPaymentDetailDataGridView.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.vSalaryPaymentDetailDataGridView.RowTemplate.Height = 40;
-            this.vSalaryPaymentDetailDataGridView.Size = new System.Drawing.Size(1247, 290);
+            this.vSalaryPaymentDetailDataGridView.Size = new System.Drawing.Size(1247, 282);
             this.vSalaryPaymentDetailDataGridView.TabIndex = 2;
             this.vSalaryPaymentDetailDataGridView.Paint += new System.Windows.Forms.PaintEventHandler(this.vSalaryPaymentDetailDataGridView_Paint);
             // 
@@ -527,9 +529,9 @@
             // baseSalaryDataGridViewTextBoxColumn
             // 
             this.baseSalaryDataGridViewTextBoxColumn.DataPropertyName = "BaseSalary";
-            dataGridViewCellStyle6.Format = "C4";
-            dataGridViewCellStyle6.NullValue = null;
-            this.baseSalaryDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle15.Format = "C4";
+            dataGridViewCellStyle15.NullValue = null;
+            this.baseSalaryDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle15;
             this.baseSalaryDataGridViewTextBoxColumn.HeaderText = "ប្រាក់ខែគោល";
             this.baseSalaryDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.baseSalaryDataGridViewTextBoxColumn.Name = "baseSalaryDataGridViewTextBoxColumn";
@@ -538,9 +540,9 @@
             // benefitDataGridViewTextBoxColumn
             // 
             this.benefitDataGridViewTextBoxColumn.DataPropertyName = "Benefit";
-            dataGridViewCellStyle7.Format = "C4";
-            dataGridViewCellStyle7.NullValue = null;
-            this.benefitDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle16.Format = "C4";
+            dataGridViewCellStyle16.NullValue = null;
+            this.benefitDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle16;
             this.benefitDataGridViewTextBoxColumn.HeaderText = "ផលប្រយោជន៏";
             this.benefitDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.benefitDataGridViewTextBoxColumn.Name = "benefitDataGridViewTextBoxColumn";
@@ -549,9 +551,9 @@
             // deductionDataGridViewTextBoxColumn
             // 
             this.deductionDataGridViewTextBoxColumn.DataPropertyName = "Deduction";
-            dataGridViewCellStyle8.Format = "C4";
-            dataGridViewCellStyle8.NullValue = null;
-            this.deductionDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle17.Format = "C4";
+            dataGridViewCellStyle17.NullValue = null;
+            this.deductionDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle17;
             this.deductionDataGridViewTextBoxColumn.HeaderText = "កាត់ប្រាក់ខែ";
             this.deductionDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.deductionDataGridViewTextBoxColumn.Name = "deductionDataGridViewTextBoxColumn";
@@ -560,9 +562,9 @@
             // salaryDataGridViewTextBoxColumn
             // 
             this.salaryDataGridViewTextBoxColumn.DataPropertyName = "Salary";
-            dataGridViewCellStyle9.Format = "C4";
-            dataGridViewCellStyle9.NullValue = null;
-            this.salaryDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle18.Format = "C4";
+            dataGridViewCellStyle18.NullValue = null;
+            this.salaryDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle18;
             this.salaryDataGridViewTextBoxColumn.HeaderText = "ប្រាក់ដំណាច់ខែ";
             this.salaryDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.salaryDataGridViewTextBoxColumn.Name = "salaryDataGridViewTextBoxColumn";
@@ -623,7 +625,7 @@
             this.groupBox3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox3.Location = new System.Drawing.Point(3, 269);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(1259, 334);
+            this.groupBox3.Size = new System.Drawing.Size(1259, 326);
             this.groupBox3.TabIndex = 3;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "តាមដានប្រវត្តិនៃការបើកប្រាក់ខែ";
@@ -656,19 +658,41 @@
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1265, 606);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1265, 598);
             this.tableLayoutPanel1.TabIndex = 4;
+            // 
+            // btnPrint
+            // 
+            this.btnPrint.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnPrint.BackColor = System.Drawing.Color.Navy;
+            this.btnPrint.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnPrint.FlatAppearance.BorderSize = 0;
+            this.btnPrint.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPrint.ForeColor = System.Drawing.Color.White;
+            this.btnPrint.Image = global::EmployeeSalaryMGProj.Properties.Resources.icons8_print_24px_1;
+            this.btnPrint.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnPrint.Location = new System.Drawing.Point(1170, 620);
+            this.btnPrint.Name = "btnPrint";
+            this.btnPrint.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.btnPrint.Size = new System.Drawing.Size(107, 41);
+            this.btnPrint.TabIndex = 5;
+            this.btnPrint.Text = "បោះពុម្ព";
+            this.btnPrint.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnPrint.UseVisualStyleBackColor = false;
+            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
             // 
             // FrmEmployeeDetail
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(1289, 627);
+            this.ClientSize = new System.Drawing.Size(1289, 674);
+            this.Controls.Add(this.btnPrint);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Font = new System.Drawing.Font("Khmer OS Siemreap", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmEmployeeDetail";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FrmEmployeeDetail";
+            this.Text = "ប្រព័ន្ធគ្រប់គ្រងប្រាក់ខែបុគ្គលិក";
             this.Load += new System.EventHandler(this.FrmEmployeeDetail_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -730,5 +754,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn statusDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn paymentDateDataGridViewTextBoxColumn;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.Button btnPrint;
     }
 }

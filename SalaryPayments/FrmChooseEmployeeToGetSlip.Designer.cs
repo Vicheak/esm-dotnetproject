@@ -76,6 +76,7 @@
             this.vSalaryPaymentDetailTableAdapter = new EmployeeSalaryMGProj.EmployeeSalaryMGDataSetTableAdapters.VSalaryPaymentDetailTableAdapter();
             this.btnSetPaymentStatus = new System.Windows.Forms.Button();
             this.btnCancelPaymentStatus = new System.Windows.Forms.Button();
+            this.btnPrint = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.departmentsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.employeeSalaryMGDataSet)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
@@ -534,10 +535,31 @@
             this.btnCancelPaymentStatus.UseVisualStyleBackColor = false;
             this.btnCancelPaymentStatus.Click += new System.EventHandler(this.btnCancelPaymentStatus_Click);
             // 
+            // btnPrint
+            // 
+            this.btnPrint.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnPrint.BackColor = System.Drawing.Color.Navy;
+            this.btnPrint.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnPrint.FlatAppearance.BorderSize = 0;
+            this.btnPrint.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPrint.ForeColor = System.Drawing.Color.White;
+            this.btnPrint.Image = global::EmployeeSalaryMGProj.Properties.Resources.icons8_print_24px_1;
+            this.btnPrint.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnPrint.Location = new System.Drawing.Point(1322, 120);
+            this.btnPrint.Name = "btnPrint";
+            this.btnPrint.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.btnPrint.Size = new System.Drawing.Size(148, 41);
+            this.btnPrint.TabIndex = 15;
+            this.btnPrint.Text = "បោះពុម្ពប័ណ្ណ";
+            this.btnPrint.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnPrint.UseVisualStyleBackColor = false;
+            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
+            // 
             // FrmChooseEmployeeToGetSlip
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(1482, 745);
+            this.Controls.Add(this.btnPrint);
             this.Controls.Add(this.btnCancelPaymentStatus);
             this.Controls.Add(this.btnSetPaymentStatus);
             this.Controls.Add(this.btnGenerateSlip);
@@ -607,5 +629,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn statusDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn paymentDateDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewImageColumn ColumnEmpty;
+        private System.Windows.Forms.Button btnPrint;
     }
 }
