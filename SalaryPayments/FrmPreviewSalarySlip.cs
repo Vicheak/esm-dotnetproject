@@ -38,6 +38,23 @@ namespace EmployeeSalaryMGProj.SalaryPayments
             this.vPaymentDeductionTableAdapter.FillBySalaryPaymentId(this.employeeSalaryMGDataSet.VPaymentDeduction,
                 this.vSalaryPaymentDetailRow.SalaryPaymentId);
 
+            //check view payment deduction 
+            if(this.employeeSalaryMGDataSet.VPaymentDeduction.Count == 0)
+            {
+                //add new default row to view payment deduction
+                var defaultVPaymentDeductionRow = this.employeeSalaryMGDataSet.VPaymentDeduction.NewVPaymentDeductionRow();
+                defaultVPaymentDeductionRow.ItemArray = new object[]
+                {
+                    -1,
+                    -1, 
+                    "---", 
+                    0.00,
+                    2, //define deduction
+                };
+
+                this.employeeSalaryMGDataSet.VPaymentDeduction.AddVPaymentDeductionRow(defaultVPaymentDeductionRow); 
+            }
+
             this.reportViewer1.RefreshReport();
         }
     }
