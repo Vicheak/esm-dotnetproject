@@ -76,3 +76,5 @@ D:\Target document\C# programming\Revision\EmployeeSalaryMGProj\obj\Debug\Employ
 D:\Target document\C# programming\Revision\EmployeeSalaryMGProj\obj\Debug\EmployeeSalaryMGProj.csproj.CopyComplete
 D:\Target document\C# programming\Revision\EmployeeSalaryMGProj\obj\Debug\EmployeeSalaryMGProj.Employees.FrmPreviewEmployeeList.resources
 D:\Target document\C# programming\Revision\EmployeeSalaryMGProj\obj\Debug\EmployeeSalaryMGProj.Employees.FrmPreviewIndividualEmployee.resources
+D:\Target document\C# programming\Revision\EmployeeSalaryMGProj\bin\Debug\Database\EmployeeSalaryMG.mdf
+D:\Target document\C# programming\Revision\EmployeeSalaryMGProj\bin\Debug\Database\EmployeeSalaryMG_log.ldf
