@@ -5,6 +5,8 @@ VisualStudioVersion = 17.5.33516.290
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmployeeSalaryMGProj", "EmployeeSalaryMGProj.csproj", "{4A340CF2-FE84-4BDB-A28C-A4DDBFAD7BA4}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "EmployeeSalaryMGProjSetup", "..\EmployeeSalaryMGProjSetup\EmployeeSalaryMGProjSetup.vdproj", "{EC5B3AC7-6042-490B-B722-8013B235F7DC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,8 @@ Global
 		{4A340CF2-FE84-4BDB-A28C-A4DDBFAD7BA4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4A340CF2-FE84-4BDB-A28C-A4DDBFAD7BA4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4A340CF2-FE84-4BDB-A28C-A4DDBFAD7BA4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EC5B3AC7-6042-490B-B722-8013B235F7DC}.Debug|Any CPU.ActiveCfg = Debug
+		{EC5B3AC7-6042-490B-B722-8013B235F7DC}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
